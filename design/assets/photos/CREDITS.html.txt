@@ -1,0 +1,10 @@
+<!--
+Photo credits — voluntary courtesy, NOT a license requirement.
+All images below are CC0 / Public Domain / attribution-free; none of this
+needs to appear on the rendered page. Keep it here in the source as a
+thank-you to the creators. Do not surface it as visible on-site attribution.
+
+restaurant-interior-cozy-1.webp: "Indoor hanging lamp lights wooden" by Unknown (rawpixel, cc0 1.0) — https://www.rawpixel.com/image/3290089/free-photo-image-vintage-table-cafe-amsterdam
+restaurant-interior-cozy-2.webp: "cozy café bookshelves blackboard its" by Unknown (rawpixel, cc0 1.0) — https://www.rawpixel.com/image/3337410/free-photo-image-cafe-office-interior-design-cafeteria
+restaurant-interior-cozy-3.jpg: "A cozy cafe interior with wooden chairs and tables arranged neatly on a patterned tile floor. Large windows allow natural light to illuminate the space. The decor features rustic elements, creating a warm and inviting atmosphere." by Nilo Velez (wordpress, cc0 1.0) — https://wordpress.org/photos/photo/78067a4728/
+-->

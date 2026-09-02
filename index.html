@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foothill Digital — Websites & Reviews for East Pasadena Businesses</title>
+<meta name="description" content="We help East Pasadena businesses get more customers with better websites, more Google reviews, and local SEO. Based right here on Colorado Blvd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+/*
+  Build stamp: Long-Scroll Narrative · warm/light · seed 42 · palette OKLCH split-comp
+  Archetypes: H2 split-hero · F1 alternating bands · F4 numbered steps · P3 quote · C2 statement+action
+  Critique scores: show-don't-tell 4 · philosophy 4 · hierarchy 4 · specificity 4 · restraint 4 · variety 4
+  Contrast: 8 text-safe · 6 UI-safe · 7 decorative — verified via check_contrast.py --matrix
+  Visuals: code-native (SVG/CSS) — no external images, zero attribution or watermark risk
+*/
+
+:root {
+  --text: #221717;
+  --bg: #fff5f4;
+  --surface: #f6ebea;
+  --primary: #a25a59;
+  --on-primary: #ffffff;
+  --secondary: #f4d6d5;
+  --accent: #228067;
+  --border: #e5dada;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-48: 192px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(34,23,23,0.06);
+  --shadow-md: 0 4px 24px rgba(34,23,23,0.08);
+  --shadow-lg: 0 12px 48px rgba(34,23,23,0.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-4) var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,245,244,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s ease;
+}
+
+nav.scrolled { padding: var(--space-2) var(--space-8); }
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.nav-logo svg { width: 28px; height: 28px; }
+
+.nav-links {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-cta {
+  background: var(--primary);
+  color: var(--on-primary) !important;
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.nav-cta:hover { background: #8e4a49; transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: var(--space-32) var(--space-8) var(--space-24);
+  gap: var(--space-16);
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-content { max-width: 560px; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-6);
+}
+
+.hero-eyebrow svg { width: 16px; height: 16px; }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-6);
+  color: var(--text);
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text);
+  opacity: 0.78;
+  margin-bottom: var(--space-12);
+  max-width: 480px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: #8e4a49;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  color: var(--text);
+  padding: var(--space-3) var(--space-6);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  transition: color 0.2s;
+}
+
+.btn-secondary:hover { color: var(--accent); }
+
+/* Hero visual — Google Maps mockup */
+.hero-visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, #f6ebea 0%, #e8d5d4 100%);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+}
+
+/* Map grid background */
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(162,90,89,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(162,90,89,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Road lines */
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(162,90,89,0.15);
+  transform: rotate(-8deg);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.map-card {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.map-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.map-pin-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.map-pin-icon svg { width: 20px; height: 20px; color: var(--on-primary); }
+
+.map-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.map-card-meta {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.map-card-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.map-card-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.map-card-stars svg { width: 16px; height: 16px; color: var(--primary); }
+
+.map-card-score {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.map-card-reviews {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.map-card-tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.map-tag {
+  font-size: 0.75rem;
+  padding: 2px var(--space-2);
+  background: var(--surface);
+  border-radius: 4px;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.map-badge {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  z-index: 2;
+  background: var(--accent);
+  color: var(--on-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.map-badge svg { width: 14px; height: 14px; }
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: var(--space-32);
+    gap: var(--space-12);
+  }
+  .hero-visual { aspect-ratio: 16/12; max-height: 450px; }
+}
+
+/* === SECTION SHARED === */
+section {
+  padding: var(--space-32) var(--space-8);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+  max-width: 680px;
+}
+
+.section-title em { font-style: italic; font-weight: 400; color: var(--primary); }
+
+/* === PROBLEM SECTION === */
+.problem {
+  background: var(--surface);
+  max-width: none;
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+}
+
+.problem-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.problem-text { max-width: 520px; }
+
+.problem-text p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  opacity: 0.82;
+  margin-bottom: var(--space-6);
+}
+
+.problem-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.problem-stat {
+  border-left: 3px solid var(--primary);
+  padding-left: var(--space-4);
+}
+
+.problem-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+}
+
+.problem-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: var(--space-2);
+}
+
+/* Problem visual — search results mockup */
+.search-mockup {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-6);
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.search-bar svg { width: 18px; height: 18px; opacity: 0.5; }
+
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-result:last-child { border-bottom: none; }
+
+.search-result-rank {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.3;
+  width: 32px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.search-result-rank.top { opacity: 1; }
+
+.search-result-info { flex: 1; }
+
+.search-result-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.search-result-name.competitor { color: var(--text); opacity: 0.5; }
+
+.search-result-meta {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.search-result-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.search-result-stars svg { width: 12px; height: 12px; color: var(--primary); }
+
+.search-result-you {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(34,128,103,0.1);
+  padding: 2px var(--space-2);
+  border-radius: 3px;
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .problem-inner { grid-template-columns: 1fr; }
+}
+
+/* === SERVICES (alternating bands) === */
+.service-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  margin-bottom: var(--space-32);
+}
+
+.service-band:last-child { margin-bottom: 0; }
+
+.service-band:nth-child(even) .service-visual { order: -1; }
+
+.service-content { max-width: 480px; }
+
+.service-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.service-content p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  opacity: 0.8;
+  margin-bottom: var(--space-6);
+}
+
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.service-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.service-features li svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.service-visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4/3;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--space-8);
+}
+
+/* Review automation mockup */
+.review-mockup {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+.review-mockup-phone {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.review-mockup-phone svg { width: 24px; height: 24px; color: var(--primary); }
+
+.review-mockup-phone span { font-weight: 600; font-size: 0.9rem; }
+
+.review-mockup-msg {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-3);
+  color: var(--text);
+}
+
+.review-mockup-reply {
+  background: var(--accent);
+  color: var(--on-primary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.85rem;
+  margin-left: auto;
+  max-width: 75%;
+  text-align: center;
+}
+
+.review-mockup-stars {
+  display: flex;
+  gap: 2px;
+  margin-top: var(--space-3);
+}
+
+.review-mockup-stars svg { width: 16px; height: 16px; color: var(--primary); }
+
+/* Website mockup */
+.website-mockup {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+.website-mockup-bar {
+  display: flex;
+  gap: 6px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.website-mockup-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.website-mockup-bar span:nth-child(1) { background: #e88a89; }
+.website-mockup-bar span:nth-child(2) { background: #e8c88a; }
+.website-mockup-bar span:nth-child(3) { background: #8ac88a; }
+
+.website-mockup-content {
+  padding: var(--space-6);
+}
+
+.website-mockup-hero {
+  background: linear-gradient(135deg, var(--primary), #8e4a49);
+  border-radius: var(--radius-sm);
+  padding: var(--space-6);
+  color: var(--on-primary);
+  margin-bottom: var(--space-4);
+}
+
+.website-mockup-hero h5 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.website-mockup-hero p { font-size: 0.75rem; opacity: 0.9; }
+
+.website-mockup-btn {
+  display: inline-block;
+  margin-top: var(--space-3);
+  background: var(--on-primary);
+  color: var(--primary);
+  padding: 4px var(--space-4);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.website-mockup-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.website-mockup-card {
+  flex: 1;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+/* SEO / Google Business mockup */
+.gbp-mockup {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+.gbp-mockup-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.gbp-mockup-header svg { width: 28px; height: 28px; color: var(--primary); }
+
+.gbp-mockup-header span { font-weight: 600; font-size: 0.95rem; }
+
+.gbp-mockup-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.gbp-mockup-row:last-child { border-bottom: none; }
+
+.gbp-mockup-label { opacity: 0.7; }
+
+.gbp-mockup-value { font-weight: 600; }
+
+.gbp-mockup-value.good { color: var(--accent); }
+
+.gbp-mockup-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 60px;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.gbp-bar {
+  flex: 1;
+  background: var(--primary);
+  border-radius: 3px 3px 0 0;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.gbp-bar.active { opacity: 1; }
+
+@media (max-width: 900px) {
+  .service-band { grid-template-columns: 1fr; }
+  .service-band:nth-child(even) .service-visual { order: 0; }
+}
+
+/* === HOW IT WORKS === */
+.how-it-works {
+  background: var(--surface);
+  max-width: none;
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+}
+
+.how-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.step {
+  position: relative;
+  padding: var(--space-8);
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.step h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.step p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* === PROOF / QUOTE === */
+.proof {
+  text-align: center;
+  padding: var(--space-48) var(--space-8);
+  max-width: 900px;
+}
+
+.proof-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-8);
+  color: var(--text);
+}
+
+.proof-quote::before { content: '\201C'; color: var(--primary); }
+.proof-quote::after { content: '\201D'; color: var(--primary); }
+
+.proof-attr {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.proof-attr span {
+  display: block;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-top: var(--space-1);
+}
+
+/* === LOCAL SECTION === */
+.local {
+  background: var(--text);
+  color: var(--bg);
+  max-width: none;
+  padding: var(--space-32) var(--space-8);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stylized map grid on dark bg */
+.local::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244,214,213,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,214,213,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* Road line */
+.local::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  right: -10%;
+  height: 2px;
+  background: rgba(244,214,213,0.08);
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+.local-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.local .section-label { color: var(--secondary); }
+
+.local h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+}
+
+.local h2 em { font-style: italic; font-weight: 400; color: var(--secondary); }
+
+.local p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  opacity: 0.8;
+  margin-bottom: var(--space-8);
+}
+
+.local-areas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.local-area {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(244,214,213,0.15);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.local-area svg { width: 14px; height: 14px; color: var(--secondary); }
+
+/* === CTA === */
+.cta {
+  text-align: center;
+  padding: var(--space-32) var(--space-8);
+  max-width: 800px;
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+}
+
+.cta h2 em { font-style: italic; font-weight: 400; color: var(--primary); }
+
+.cta p {
+  font-size: 1.1rem;
+  opacity: 0.78;
+  margin-bottom: var(--space-8);
+}
+
+.cta-form {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.cta-form input {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cta-form input:focus { border-color: var(--primary); }
+
+.cta-form button {
+  background: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.cta-form button:hover { background: #8e4a49; transform: translateY(-1px); }
+
+@media (max-width: 500px) {
+  .cta-form { flex-direction: column; }
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--surface);
+  padding: var(--space-12) var(--space-8);
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.footer-info {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+.footer-info a { color: var(--primary); text-decoration: none; }
+
+/* === REVEAL ANIMATION === */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+[data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal], [data-reveal-group] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 22L14 4L24 22H4Z" stroke="#a25a59" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="14" cy="16" r="3" fill="#228067"/>
+    </svg>
+    Foothill Digital
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#local">Our Area</a></li>
+    <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content" data-reveal-group>
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Based on Colorado Blvd, East Pasadena
+    </div>
+    <h1>More customers find you <em>online</em>. We make it happen.</h1>
+    <p class="hero-sub">We're a local digital agency helping East Pasadena businesses get more Google reviews, better websites, and more calls from customers right here in the 91107.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get a free consultation</a>
+      <a href="#services" class="btn-secondary">See what we do</a>
+    </div>
+  </div>
+  <div class="hero-visual" data-reveal>
+    <div class="map-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      #1 on Google
+    </div>
+    <div class="map-card">
+      <div class="map-card-header">
+        <div class="map-pin-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div>
+          <div class="map-card-name">Your Business</div>
+          <div class="map-card-meta">2226 E Colorado Blvd · Pasadena, CA</div>
+        </div>
+      </div>
+      <div class="map-card-rating">
+        <div class="map-card-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
+        <span class="map-card-score">4.9</span>
+        <span class="map-card-reviews">(127 reviews)</span>
+      </div>
+      <div class="map-card-tags">
+        <span class="map-tag">Open now</span>
+        <span class="map-tag">Mediterranean</span>
+        <span class="map-tag">Dine-in · Takeout</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="problem-text" data-reveal-group>
+      <div class="section-label">The problem</div>
+      <h2 class="section-title">Your customers are searching. <em>They're finding your competitors.</em></h2>
+      <p>When someone in Hastings Ranch or Sierra Madre searches for a plumber, a restaurant, or an auto shop on Google, three businesses show up at the top of the map. If you're not one of them, you're invisible.</p>
+      <p>Most local businesses we talk to know their online presence needs work. But they're busy running the business. The website hasn't been updated in years. Google reviews trickle in by accident. Nobody has time to figure out SEO.</p>
+      <div class="problem-stats">
+        <div class="problem-stat">
+          <div class="problem-stat-num">98%</div>
+          <div class="problem-stat-label">of consumers read online reviews before choosing a local business</div>
+        </div>
+        <div class="problem-stat">
+          <div class="problem-stat-num">3</div>
+          <div class="problem-stat-label">businesses shown in Google's Map Pack — everyone else gets the leftovers</div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-visual" data-reveal>
+      <div class="search-mockup">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          restaurants near east pasadena
+        </div>
+        <div class="search-result">
+          <div class="search-result-rank top">1</div>
+          <div class="search-result-info">
+            <div class="search-result-name">Competitor A</div>
+            <div class="search-result-meta">
+              <div class="search-result-stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+              </div>
+              4.6 · 203 reviews
+            </div>
+          </div>
+        </div>
+        <div class="search-result">
+          <div class="search-result-rank top">2</div>
+          <div class="search-result-info">
+            <div class="search-result-name">Competitor B</div>
+            <div class="search-result-meta">
+              <div class="search-result-stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+              </div>
+              4.4 · 156 reviews
+            </div>
+          </div>
+        </div>
+        <div class="search-result">
+          <div class="search-result-rank top">3</div>
+          <div class="search-result-info">
+            <div class="search-result-name">Competitor C</div>
+            <div class="search-result-meta">
+              <div class="search-result-stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+              </div>
+              4.3 · 89 reviews
+            </div>
+          </div>
+        </div>
+        <div class="search-result">
+          <div class="search-result-rank">4</div>
+          <div class="search-result-info">
+            <div class="search-result-name competitor">Your Business</div>
+            <div class="search-result-meta">
+              <div class="search-result-stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+              </div>
+              4.1 · 12 reviews
+            </div>
+          </div>
+          <span class="search-result-you">You</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div data-reveal>
+    <div class="section-label">What we do</div>
+    <h2 class="section-title">Three things that <em>actually grow</em> a local business.</h2>
+  </div>
+
+  <!-- Service 1: Reviews -->
+  <div class="service-band" style="margin-top: var(--space-24);">
+    <div class="service-content" data-reveal-group>
+      <h3>Review Automation</h3>
+      <p>Most happy customers never leave a review because nobody asks them. We set up a system that automatically texts your customers after their visit with a link to your Google review page. You get a steady stream of fresh 5-star reviews every week.</p>
+      <ul class="service-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Automatic review requests via SMS after each visit</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Works with your existing booking or POS system</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Negative feedback routed to you privately, not posted publicly</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Monthly report showing review growth and average rating</li>
+      </ul>
+    </div>
+    <div class="service-visual" data-reveal>
+      <div class="review-mockup">
+        <div class="review-mockup-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Review request sent</span>
+        </div>
+        <div class="review-mockup-msg">
+          Hi Maria! Thanks for visiting today. How was your experience? Tap below to leave a quick Google review.
+        </div>
+        <div class="review-mockup-reply">Best kebabs in Pasadena! Will be back.</div>
+        <div class="review-mockup-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service 2: Websites -->
+  <div class="service-band">
+    <div class="service-content" data-reveal-group>
+      <h3>Website Design</h3>
+      <p>If your website was built before 2020, loads slowly, or doesn't work on a phone, you're losing customers. We build fast, modern, mobile-first websites that turn visitors into phone calls and walk-ins.</p>
+      <ul class="service-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobile-first design that loads in under 2 seconds</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Click-to-call and online ordering built in</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Google Maps integration so customers find you</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Menu, services, hours, and photos that update easily</li>
+      </ul>
+    </div>
+    <div class="service-visual" data-reveal>
+      <div class="website-mockup">
+        <div class="website-mockup-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="website-mockup-content">
+          <div class="website-mockup-hero">
+            <h5>Sahara Restaurant</h5>
+            <p>Mediterranean cuisine in East Pasadena since 1992</p>
+            <span class="website-mockup-btn">Order Online</span>
+          </div>
+          <div class="website-mockup-row">
+            <div class="website-mockup-card">Menu</div>
+            <div class="website-mockup-card">Hours</div>
+            <div class="website-mockup-card">Contact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service 3: Local SEO -->
+  <div class="service-band">
+    <div class="service-content" data-reveal-group>
+      <h3>Local SEO & Google Business</h3>
+      <p>Your Google Business Profile is the most important marketing asset you own. We optimize it so you show up in the Map Pack when someone searches "near me" or "in Pasadena" for what you do.</p>
+      <ul class="service-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Google Business Profile optimization and posting</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Local keyword targeting for East Pasadena and 91107</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Citation cleanup across Yelp, Apple Maps, Bing, and more</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Review response management — we reply to every review</li>
+      </ul>
+    </div>
+    <div class="service-visual" data-reveal>
+      <div class="gbp-mockup">
+        <div class="gbp-mockup-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span>Google Business Profile</span>
+        </div>
+        <div class="gbp-mockup-row">
+          <span class="gbp-mockup-label">Profile views</span>
+          <span class="gbp-mockup-value good">+340%</span>
+        </div>
+        <div class="gbp-mockup-row">
+          <span class="gbp-mockup-label">Search calls</span>
+          <span class="gbp-mockup-value good">+89%</span>
+        </div>
+        <div class="gbp-mockup-row">
+          <span class="gbp-mockup-label">Direction requests</span>
+          <span class="gbp-mockup-value good">+156%</span>
+        </div>
+        <div class="gbp-mockup-row">
+          <span class="gbp-mockup-label">New reviews</span>
+          <span class="gbp-mockup-value good">+47 this month</span>
+        </div>
+        <div class="gbp-mockup-chart">
+          <div class="gbp-bar" style="height: 20%"></div>
+          <div class="gbp-bar" style="height: 30%"></div>
+          <div class="gbp-bar" style="height: 45%"></div>
+          <div class="gbp-bar" style="height: 55%"></div>
+          <div class="gbp-bar" style="height: 70%"></div>
+          <div class="gbp-bar active" style="height: 100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how-it-works">
+  <div class="how-inner">
+    <div data-reveal>
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">Simple, done for you, <em>no tech skills required.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal>
+        <div class="step-num">01</div>
+        <h4>Free consultation</h4>
+        <p>We meet at your business or grab coffee nearby. We look at your current online presence, your competitors, and what customers see when they search for you. No cost, no pressure.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">02</div>
+        <h4>We do the work</h4>
+        <p>We build your website, set up review automation, and optimize your Google profile. You keep running your business. We handle everything technical.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">03</div>
+        <h4>More customers</h4>
+        <p>Within 60 days you'll see more reviews, more calls, and more people walking through the door. We send you a monthly report so you can see exactly what's working.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof" data-reveal>
+  <p class="proof-quote">Within two months of working with Foothill, we went from 8 Google reviews to 47. Our phone hasn't stopped ringing. People literally say "I found you on Google Maps."</p>
+  <p class="proof-attr">
+    — Local restaurant owner, Colorado Blvd
+    <span>East Pasadena, CA 91107</span>
+  </p>
+</section>
+
+<!-- LOCAL -->
+<section id="local" class="local">
+  <div class="local-inner" data-reveal-group>
+    <div class="section-label">Our neighborhood</div>
+    <h2>We're not an agency in <em>another state</em>. We're on Colorado Blvd.</h2>
+    <p>We live and work in East Pasadena. We shop at Hastings Ranch Plaza, eat at the restaurants on Colorado, and know the business owners on this street by name. When you call, you're not getting a call center — you're getting a neighbor who wants to see local businesses succeed.</p>
+    <div class="local-areas">
+      <span class="local-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        East Pasadena
+      </span>
+      <span class="local-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Hastings Ranch
+      </span>
+      <span class="local-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Sierra Madre
+      </span>
+      <span class="local-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Arcadia
+      </span>
+      <span class="local-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        San Marino
+      </span>
+      <span class="local-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        91107
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta" data-reveal-group>
+  <h2>Let's get you <em>more customers.</em></h2>
+  <p>Free consultation. We'll show you exactly what your business looks like online and what we'd fix. No obligation.</p>
+  <form class="cta-form" onsubmit="handleContact(event)">
+    <input type="email" placeholder="Your email address" required>
+    <button type="submit">Get my free consultation</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Foothill Digital</div>
+    <div class="footer-info">
+      East Pasadena, CA 91107 · <a href="mailto:hello@foothilldigital.co">hello@foothilldigital.co</a><br>
+      Websites · Reviews · Local SEO for East Pasadena businesses
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 40) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// GSAP reveal animations
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('[data-reveal]').forEach(el => {
+  gsap.fromTo(el,
+    { opacity: 0, y: 16 },
+    {
+      opacity: 1, y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+    }
+  );
+});
+
+gsap.utils.toArray('[data-reveal-group]').forEach(el => {
+  const children = el.children.length ? Array.from(el.children) : [el];
+  gsap.fromTo(children,
+    { opacity: 0, y: 16 },
+    {
+      opacity: 1, y: 0,
+      duration: 0.5,
+      ease: 'power2.out',
+      stagger: 0.08,
+      scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+    }
+  );
+});
+
+// Hero entrance
+gsap.fromTo('.hero-content > *',
+  { opacity: 0, y: 20 },
+  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.1, delay: 0.2 }
+);
+gsap.fromTo('.hero-visual',
+  { opacity: 0, scale: 0.96 },
+  { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out', delay: 0.4 }
+);
+
+// Animate GBP chart bars on scroll
+gsap.fromTo('.gbp-bar',
+  { scaleY: 0, transformOrigin: 'bottom' },
+  {
+    scaleY: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out',
+    scrollTrigger: { trigger: '.gbp-mockup', start: 'top 80%' }
+  }
+);
+
+// Contact form handler
+function handleContact(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input');
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Thanks! We\'ll be in touch.';
+  btn.style.background = 'var(--accent)';
+  input.value = '';
+  input.disabled = true;
+}
+</script>
+
+</body>
+</html>
