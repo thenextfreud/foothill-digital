@@ -1,0 +1,14 @@
+{
+  "name": "foothill-review-tool",
+  "version": "1.0.0",
+  "description": "SMS-based review automation tool for local businesses",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "twilio": "^5.2.0"
+  }
+}

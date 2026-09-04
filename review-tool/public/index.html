@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Dashboard — Foothill Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--text:#1a1f2a;--bg:#f8f9fb;--surface:#edf0f4;--primary:#a25a59;--on-primary:#fff;--accent:#228067;--border:#d8dde5;--muted:#5a6478}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{background:var(--text);color:#fff;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:600;font-size:1.1rem;display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--primary)}
+.container{max-width:1200px;margin:0 auto;padding:32px}
+h1{font-size:1.5rem;margin-bottom:8px}
+.subtitle{color:var(--muted);font-size:.9rem;margin-bottom:32px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px}
+.stat-num{font-size:2rem;font-weight:700;color:var(--primary);line-height:1}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:8px}
+.stat-card.accent .stat-num{color:var(--accent)}
+.panel{background:#fff;border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:24px}
+.panel h2{font-size:1.1rem;margin-bottom:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+.form-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;color:var(--muted)}
+.form-group input{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-family:inherit;font-size:.95rem;outline:none;transition:border-color .2s}
+.form-group input:focus{border-color:var(--primary)}
+.btn{background:var(--primary);color:var(--on-primary);border:none;padding:10px 24px;border-radius:6px;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s}
+.btn:hover{background:#8e4a49}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:12px 16px;border-bottom:2px solid var(--border)}
+td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:.9rem}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600}
+.badge.sent{background:#e3f2fd;color:#1565c0}
+.badge.clicked{background:#fff3e0;color:#e65100}
+.badge.reviewed{background:#e8f5e9;color:#2e7d32}
+.badge.pending{background:var(--surface);color:var(--muted)}
+.empty{text-align:center;padding:48px;color:var(--muted);font-size:.9rem}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#fff;padding:14px 24px;border-radius:8px;font-weight:600;font-size:.9rem;box-shadow:0 4px 24px rgba(0,0,0,.15);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s}
+.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="nav">
+<div class="nav-logo"><span>Foothill</span> Review Dashboard</div>
+<div style="font-size:.85rem;opacity:.6">Sahara Restaurant</div>
+</div>
+<div class="container">
+<h1>Review Automation</h1>
+<p class="subtitle">Add a customer after their visit. We'll text them a link to leave a Google review.</p>
+
+<div class="stats" id="stats">
+<div class="stat-card"><div class="stat-num" id="statSent">0</div><div class="stat-label">Review requests sent</div></div>
+<div class="stat-card"><div class="stat-num" id="statClicked">0</div><div class="stat-label">Links clicked</div></div>
+<div class="stat-card accent"><div class="stat-num" id="statReviewed">0</div><div class="stat-label">Reviews left</div></div>
+<div class="stat-card accent"><div class="stat-num" id="statRating">—</div><div class="stat-label">Average rating</div></div>
+</div>
+
+<div class="panel">
+<h2>Add Customer</h2>
+<form class="form-row" onsubmit="addCustomer(event)">
+<div class="form-group">
+<label for="name">Customer Name</label>
+<input type="text" id="name" placeholder="Maria Garcia" required>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" placeholder="(626) 555-0123" required>
+</div>
+<button type="submit" class="btn">Send Review Request</button>
+</form>
+</div>
+
+<div class="panel">
+<h2>Recent Customers</h2>
+<div id="customerList">
+<div class="empty">No customers yet. Add one above to get started.</div>
+</div>
+</div>
+</div>
+
+<div class="toast" id="toast">Review request sent!</div>
+
+<script>
+async function loadStats() {
+  try {
+    const res = await fetch('/api/stats');
+    const data = await res.json();
+    document.getElementById('statSent').textContent = data.totalSent;
+    document.getElementById('statClicked').textContent = data.totalClicked;
+    document.getElementById('statReviewed').textContent = data.totalReviewed;
+    document.getElementById('statRating').textContent = data.averageRating || '—';
+    renderCustomers(data.recentCustomers);
+  } catch(e) { console.error(e); }
+}
+
+function renderCustomers(customers) {
+  const list = document.getElementById('customerList');
+  if (!customers || customers.length === 0) {
+    list.innerHTML = '<div class="empty">No customers yet. Add one above to get started.</div>';
+    return;
+  }
+  list.innerHTML = '<table><thead><tr><th>Name</th><th>Phone</th><th>Visit Date</th><th>Status</th></tr></thead><tbody>' +
+    customers.map(c => {
+      let badge = '<span class="badge pending">Pending</span>';
+      if (c.reviewed) badge = '<span class="badge reviewed">Reviewed' + (c.rating ? ' · ' + c.rating + '★' : '') + '</span>';
+      else if (c.reviewClicked) badge = '<span class="badge clicked">Clicked</span>';
+      else if (c.smsSent) badge = '<span class="badge sent">SMS Sent</span>';
+      const date = new Date(c.visitDate).toLocaleDateString();
+      return `<tr><td>${c.name}</td><td>${c.phone}</td><td>${date}</td><td>${badge}</td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+async function addCustomer(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const btn = e.target.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  
+  try {
+    const res = await fetch('/api/customers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone })
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
+      showToast('Review request sent to ' + name + '!');
+      loadStats();
+    }
+  } catch(err) {
+    showToast('Error sending request');
+  }
+  btn.disabled = false;
+  btn.textContent = 'Send Review Request';
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+loadStats();
+</script>
+</body>
+</html>
