@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Barrel — Small-Batch Coffee & House Pastries in East Pasadena</title>
+<meta name="description" content="Neighborhood coffee bar on East Colorado Blvd. Single-origin pour-overs, espresso drinks, and pastries baked in-house every morning. 2982 E Colorado Blvd #106b, Pasadena.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text: #2b1d12;
+  --bg: #faf6f0;
+  --surface: #f0e6d8;
+  --primary: #6f4e37;
+  --on-primary: #ffffff;
+  --accent: #c8963f;
+  --accent-dark: #a8782f;
+  --border: #e6d9c6;
+  --muted: #6b5d4f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* DEMO BANNER */
+.demo-banner {
+  background: var(--primary);
+  color: var(--on-primary);
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.demo-banner a { color: var(--accent); font-weight: 600; text-decoration: underline; }
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 33px;
+  z-index: 100;
+  background: rgba(250,246,240,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo svg { width: 22px; height: 22px; }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-order {
+  background: var(--primary);
+  color: var(--on-primary) !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.nav-order:hover { background: #553b29; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+  align-items: stretch;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  padding: 96px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero h1 em { font-style: italic; font-weight: 400; color: var(--primary); }
+
+.hero-sub {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover { background: #553b29; transform: translateY(-1px); }
+
+.btn-secondary {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.btn-secondary:hover { color: var(--accent-dark); }
+
+.hero-visual {
+  background: linear-gradient(135deg, #6f4e37 0%, #5a3e29 50%, #3d2818 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stylized coffee bean / steam pattern */
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(200,150,63,0.18) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(200,150,63,0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.25) 0%, transparent 60%);
+}
+
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 60% 20% at 50% 15%, rgba(255,240,220,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 18% at 40% 25%, rgba(255,240,220,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 20% at 60% 35%, rgba(255,240,220,0.04) 0%, transparent 70%);
+}
+
+.hero-visual-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--on-primary);
+  padding: 48px;
+}
+
+.hero-visual-content svg {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.hero-visual-content h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.92;
+  line-height: 1.4;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  background: var(--bg);
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.hero-badge-stars { display: flex; gap: 2px; }
+.hero-badge-stars svg { width: 18px; height: 18px; color: var(--accent); }
+.hero-badge-text { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.hero-badge-text span { display: block; font-weight: 400; opacity: 0.6; font-size: 0.8rem; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-content { padding: 48px 32px; }
+  .hero-visual { min-height: 300px; }
+}
+
+/* SECTIONS */
+section { padding: 96px 32px; max-width: 1400px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  max-width: 680px;
+}
+
+.section-title em { font-style: italic; font-weight: 400; color: var(--primary); }
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.about-signature {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-top: 24px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.about-stat {
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+.about-stat-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.about-visual {
+  background: linear-gradient(135deg, var(--surface), var(--border));
+  border-radius: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(111,78,55,0.04) 20px, rgba(111,78,55,0.04) 22px);
+}
+
+.about-visual svg {
+  width: 50%;
+  height: 50%;
+  color: var(--primary);
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .about { grid-template-columns: 1fr; }
+}
+
+/* MENU */
+.menu {
+  background: var(--surface);
+  max-width: none;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.menu-inner { max-width: 1400px; margin: 0 auto; }
+
+.menu-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.menu-tab {
+  padding: 8px 20px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.menu-tab.active, .menu-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.menu-item {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.menu-item:hover {
+  box-shadow: 0 4px 24px rgba(111,78,55,0.08);
+  transform: translateY(-2px);
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.menu-item-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.menu-item-price {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.menu-item-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.menu-item-popular {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: rgba(200,150,63,0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}
+
+/* HOURS & LOCATION */
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hours-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.hours-list li span:first-child { font-weight: 500; }
+.hours-list li span:last-child { color: var(--muted); }
+.hours-list li.closed span:last-child { color: var(--primary); }
+
+.location-info {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 48px;
+  text-align: center;
+}
+
+.location-info h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.location-info p {
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.location-info .phone {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  display: block;
+  margin: 24px 0;
+}
+
+.location-map {
+  margin-top: 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(111,78,55,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111,78,55,0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.location-map-pin {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.location-map-pin svg { width: 40px; height: 40px; color: var(--primary); }
+.location-map-pin span { display: block; font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+
+@media (max-width: 900px) {
+  .location { grid-template-columns: 1fr; }
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 128px 32px;
+  max-width: 800px;
+}
+
+.cta h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.cta h2 em { font-style: italic; font-weight: 400; color: var(--primary); }
+
+.cta p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: var(--bg);
+  padding: 48px 32px;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.footer-info {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+.footer-info a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  This is a demo website built by <a href="https://thenextfreud.github.io/foothill-digital/">Foothill Digital</a> for Coffee Barrel. Want a site like this? <a href="mailto:hello@foothilldigital.co">Email us</a>.
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M6 8h12v9a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="5"/><line x1="10" y1="2" x2="10" y2="5"/><line x1="14" y1="2" x2="14" y2="5"/></svg>
+    Coffee Barrel
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#location">Hours & Location</a></li>
+    <li><a href="#visit" class="nav-order">Visit Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Coffee Bar · East Pasadena</div>
+    <h1>Small-batch coffee, <em>pulled with care,</em> on Colorado Blvd.</h1>
+    <p class="hero-sub">Single-origin pour-overs, rich espresso drinks, and pastries baked in-house every morning. A quiet corner of East Pasadena built for slow mornings and good conversation.</p>
+    <div class="hero-ctas">
+      <a href="#visit" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Visit Us
+      </a>
+      <a href="#menu" class="btn-secondary">View Menu</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-content">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+        <path d="M6 8h12v9a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V8z"/>
+        <line x1="6" y1="2" x2="6" y2="5"/>
+        <line x1="10" y1="2" x2="10" y2="5"/>
+        <line x1="14" y1="2" x2="14" y2="5"/>
+      </svg>
+      <h2>"Every cup is pulled by hand,<br>every pastry baked before sunrise —<br>that's the Coffee Barrel way."</h2>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+      </div>
+      <div class="hero-badge-text">
+        4.8 on Google
+        <span>320+ reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-text">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">A neighborhood barrel, <em>full of good coffee.</em></h2>
+    <p>Coffee Barrel started with a simple idea: bring honest, carefully sourced coffee to East Pasadena. No shortcuts, no fuss — just beans roasted in small batches, ground to order, and brewed by people who care about the craft.</p>
+    <p>Tucked into a small storefront on Colorado Blvd, we've become the morning ritual for regulars from Hastings Ranch to San Marino. Pull up a stool, watch the pour-over bloom, and stay a while. The Wi-Fi is fast and the refills are endless.</p>
+    <div class="about-stats">
+      <div class="about-stat">
+        <div class="about-stat-num">12</div>
+        <div class="about-stat-label">Rotating origins</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">4.8</div>
+        <div class="about-stat-label">Average rating</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">6AM</div>
+        <div class="about-stat-label">Open weekdays</div>
+      </div>
+    </div>
+    <p class="about-signature">— The Coffee Barrel crew</p>
+  </div>
+  <div class="about-visual">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+      <path d="M6 8h12v9a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V8z"/>
+      <line x1="6" y1="2" x2="6" y2="5"/>
+      <line x1="10" y1="2" x2="10" y2="5"/>
+      <line x1="14" y1="2" x2="14" y2="5"/>
+    </svg>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu">
+  <div class="menu-inner">
+    <div class="section-label">Our Menu</div>
+    <h2 class="section-title">Brewed by hand, <em>baked before sunrise.</em></h2>
+
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="filterMenu('all', this)">All</button>
+      <button class="menu-tab" onclick="filterMenu('espresso', this)">Espresso</button>
+      <button class="menu-tab" onclick="filterMenu('drip', this)">Drip & Pour-Over</button>
+      <button class="menu-tab" onclick="filterMenu('pastry', this)">Pastries</button>
+      <button class="menu-tab" onclick="filterMenu('seasonal', this)">Seasonal</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+      <!-- Espresso -->
+      <div class="menu-item" data-cat="espresso">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Barrel Espresso</span>
+          <span class="menu-item-price">$3.25</span>
+        </div>
+        <p class="menu-item-desc">A double shot of our house blend — dark chocolate, toasted almond, and a brown-sugar finish. Pulled on a La Marzocco and served in a warmed cup.</p>
+        <span class="menu-item-popular">#1 Most Ordered</span>
+      </div>
+
+      <div class="menu-item" data-cat="espresso">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Brown Sugar Oat Latte</span>
+          <span class="menu-item-price">$5.75</span>
+        </div>
+        <p class="menu-item-desc">Double espresso, steamed oat milk, and a house-made brown-sugar syrup. Smooth, slightly caramelized, and the reason half our regulars show up at 7AM.</p>
+        <span class="menu-item-popular">#2 Most Ordered</span>
+      </div>
+
+      <div class="menu-item" data-cat="espresso">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Honey Cardamom Latte</span>
+          <span class="menu-item-price">$5.95</span>
+        </div>
+        <p class="menu-item-desc">Espresso, steamed whole milk, wildflower honey, and a pinch of ground cardamom. Warm, fragrant, and quietly the best thing on the menu.</p>
+      </div>
+
+      <div class="menu-item" data-cat="espresso">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Iced Vanilla Cold Brew</span>
+          <span class="menu-item-price">$4.75</span>
+        </div>
+        <p class="menu-item-desc">House cold brew steeped 18 hours, served over ice with a splash of Madagascar vanilla syrup. Low-acid, smooth, and dangerously easy to drink.</p>
+      </div>
+
+      <div class="menu-item" data-cat="espresso">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Cappuccino</span>
+          <span class="menu-item-price">$4.50</span>
+        </div>
+        <p class="menu-item-desc">A classic — double espresso, thick microfoam, and a dusting of cocoa. Served in a 6oz cup the way it's meant to be.</p>
+      </div>
+
+      <!-- Drip & Pour-Over -->
+      <div class="menu-item" data-cat="drip">
+        <div class="menu-item-header">
+          <span class="menu-item-name">House Drip</span>
+          <span class="menu-item-price">$3.00</span>
+        </div>
+        <p class="menu-item-desc">Our rotating house blend, brewed fresh every hour. Refills on the house if you're staying in. Today's roast: Guatemala Huehuetenango.</p>
+      </div>
+
+      <div class="menu-item" data-cat="drip">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Single-Origin Pour-Over</span>
+          <span class="menu-item-price">$5.25</span>
+        </div>
+        <p class="menu-item-desc">Brewed to order on a V60. Ask the barista what's pouring — this week features an Ethiopian Yirgacheffe with jasmine, peach, and bergamot notes.</p>
+        <span class="menu-item-popular">Brewed to order</span>
+      </div>
+
+      <div class="menu-item" data-cat="drip">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Cold Brew Tonic</span>
+          <span class="menu-item-price">$5.50</span>
+        </div>
+        <p class="menu-item-desc">Cold brew over ice with tonic water and a twist of orange. Effervescent, refreshing, and the most refreshing thing on a Pasadena afternoon.</p>
+      </div>
+
+      <!-- Pastries -->
+      <div class="menu-item" data-cat="pastry">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Almond Croissant</span>
+          <span class="menu-item-price">$4.95</span>
+        </div>
+        <p class="menu-item-desc">Laminated three days in butter, filled with frangipane, and dusted with toasted almonds and powdered sugar. Baked every morning at 5AM.</p>
+        <span class="menu-item-popular">Sells out by 10AM</span>
+      </div>
+
+      <div class="menu-item" data-cat="pastry">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Pain au Chocolat</span>
+          <span class="menu-item-price">$4.50</span>
+        </div>
+        <p class="menu-item-desc">Buttery croissant dough wrapped around two batons of 70% dark chocolate. Shatters when you tear it. Best paired with a cortado.</p>
+      </div>
+
+      <div class="menu-item" data-cat="pastry">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Maple Pecan Scone</span>
+          <span class="menu-item-price">$3.95</span>
+        </div>
+        <p class="menu-item-desc">Tender, not too sweet, loaded with toasted pecans and a maple-sugar glaze. The scone that turned at least three self-described "scone skeptics."</p>
+      </div>
+
+      <!-- Seasonal -->
+      <div class="menu-item" data-cat="seasonal">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Pumpkin Spice Latte</span>
+          <span class="menu-item-price">$5.95</span>
+        </div>
+        <p class="menu-item-desc">Back for fall. Real roasted pumpkin, warm spices, espresso, and steamed milk. No artificial syrup — we make the puree in-house.</p>
+        <span class="menu-item-popular">Limited: Oct–Nov</span>
+      </div>
+
+      <div class="menu-item" data-cat="seasonal">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Maple Bourbon Latte</span>
+          <span class="menu-item-price">$6.25</span>
+        </div>
+        <p class="menu-item-desc">Espresso, steamed milk, real maple syrup, and a whisper of bourbon extract. Tastes like a flannel shirt feels.</p>
+      </div>
+
+      <div class="menu-item" data-cat="seasonal">
+        <div class="menu-item-header">
+          <span class="menu-item-name">Spiced Apple Cider</span>
+          <span class="menu-item-price">$4.50</span>
+        </div>
+        <p class="menu-item-desc">Local apple cider simmered with cinnamon, clove, and star anise. Caffeine-free and served steaming hot.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="location">
+  <div>
+    <div class="section-label">Hours & Location</div>
+    <h2 class="section-title">Find us on <em>East Colorado Blvd.</em></h2>
+    <ul class="hours-list">
+      <li><span>Monday</span><span>6:00 AM – 6:00 PM</span></li>
+      <li><span>Tuesday</span><span>6:00 AM – 6:00 PM</span></li>
+      <li><span>Wednesday</span><span>6:00 AM – 6:00 PM</span></li>
+      <li><span>Thursday</span><span>6:00 AM – 6:00 PM</span></li>
+      <li><span>Friday</span><span>6:00 AM – 7:00 PM</span></li>
+      <li><span>Saturday</span><span>7:00 AM – 7:00 PM</span></li>
+      <li><span>Sunday</span><span>7:00 AM – 5:00 PM</span></li>
+    </ul>
+  </div>
+  <div class="location-info">
+    <h3>Coffee Barrel</h3>
+    <p>2982 E Colorado Blvd #106b</p>
+    <p>Pasadena, CA 91107</p>
+    <a href="tel:6268440177" class="phone">(626) 844-0177</a>
+    <div class="location-map">
+      <div class="location-map-pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>2982 E Colorado Blvd #106b, Pasadena</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="visit" class="cta">
+  <h2>Stop by for a <em>slow morning</em> and a great cup.</h2>
+  <p>Pull up a stool, grab a pour-over, and stay a while. We're on East Colorado Blvd, open early and brewing all day.</p>
+  <div class="cta-buttons">
+    <a href="tel:6268440177" class="btn-primary">Call to Order Ahead</a>
+    <a href="#location" class="btn-secondary">Get Directions</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Coffee Barrel</div>
+    <div class="footer-info">
+      2982 E Colorado Blvd #106b, Pasadena, CA 91107 · (626) 844-0177<br>
+      Small-batch coffee & house-baked pastries in East Pasadena
+    </div>
+  </div>
+</footer>
+
+<script>
+function filterMenu(cat, btn) {
+  document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.menu-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

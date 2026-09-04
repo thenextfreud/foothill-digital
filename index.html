@@ -899,6 +899,145 @@ section {
   margin-top: var(--space-1);
 }
 
+/* === DEMOS / OUR WORK === */
+.demos {
+  background: var(--surface);
+  max-width: none;
+  padding: var(--space-32) var(--space-8);
+}
+
+.demos-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.demos-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.demos-header .section-label { display: block; }
+
+.demos-header h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.demos-header h2 em { font-style: italic; font-weight: 400; color: var(--primary); }
+
+.demos-header p {
+  font-size: 1.05rem;
+  color: var(--text);
+  opacity: 0.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.demos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.demo-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.demo-card-visual {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-card-visual svg {
+  width: 48px;
+  height: 48px;
+  color: rgba(255,255,255,0.85);
+  position: relative;
+  z-index: 1;
+}
+
+.demo-card-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(255,255,255,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(0,0,0,0.12) 0%, transparent 40%);
+}
+
+.demo-card-body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.demo-card-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.demo-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.demo-card-desc {
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0.65;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.demo-card-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.demo-card-link svg { width: 14px; height: 14px; }
+
+@media (max-width: 900px) {
+  .demos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .demos-grid { grid-template-columns: 1fr; }
+}
+
 /* === LOCAL SECTION === */
 .local {
   background: var(--text);
@@ -1110,6 +1249,7 @@ footer {
     Foothill Digital
   </a>
   <ul class="nav-links">
+    <li><a href="#demos">Our Work</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#local">Our Area</a></li>
@@ -1415,6 +1555,140 @@ footer {
     — Local restaurant owner, Colorado Blvd
     <span>East Pasadena, CA 91107</span>
   </p>
+</section>
+
+<!-- DEMOS / OUR WORK -->
+<section id="demos" class="demos">
+  <div class="demos-inner" data-reveal-group>
+    <div class="demos-header" data-reveal>
+      <div class="section-label">Our work</div>
+      <h2>Live demo websites <em>built for East Pasadena.</em></h2>
+      <p>Click any demo below to see what a modern, fast, mobile-first website could look like for your business. Each one is a real, working prototype.</p>
+    </div>
+    <div class="demos-grid">
+
+      <a class="demo-card" href="demos/sahara/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#8b3a2e 0%,#6e2d24 50%,#4a1e18 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Restaurant</span>
+          <span class="demo-card-name">Sahara Restaurant</span>
+          <span class="demo-card-desc">Mediterranean kebabs grilled over mesquite charcoal since 1992. Online menu with tabbed categories.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/dots/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#d4a574 0%,#b8854a 50%,#8b5e2f 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Cafe & Bakery</span>
+          <span class="demo-card-name">Dots Cafe & Bakery</span>
+          <span class="demo-card-desc">Neighborhood cafe on Colorado Blvd. Warm, inviting design with seasonal menu highlights.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/la3d/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#2d6a4f 0%,#1f4d36 50%,#143624 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"/><path d="M4 7l8 5 8-5"/><path d="M12 22V12"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Landscaping</span>
+          <span class="demo-card-name">LA3D Landscaping</span>
+          <span class="demo-card-desc">Landscape design, installation, and hardscaping across the San Gabriel Valley. Service grid + quote form.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/pasadena-perio/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#2c5f7c 0%,#1e4358 50%,#0f2a3a 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Dental / Medical</span>
+          <span class="demo-card-name">Pasadena Perio</span>
+          <span class="demo-card-desc">Periodontics practice with a calm, trustworthy design. Patient-focused with appointment booking.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/talgarden/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#4a7c59 0%,#2d5a3d 50%,#1a3d28 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V10"/><path d="M12 10C12 6 9 3 5 3c0 4 3 7 7 7Z"/><path d="M12 10c0-4 3-7 7-7 0 4-3 7-7 7Z"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Garden / Nursery</span>
+          <span class="demo-card-name">TalGarden</span>
+          <span class="demo-card-desc">Plant nursery and garden center. Fresh, green design with seasonal plant collections.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/coffee-barrel/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#6f4e37 0%,#5a3e2a 50%,#3d2a1c 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Coffee Shop</span>
+          <span class="demo-card-name">Coffee Barrel</span>
+          <span class="demo-card-desc">Small-batch coffee on Colorado Blvd. Tabbed menu with espresso, drip, pastries, and seasonal specials.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/mk-chinese/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#a01818 0%,#7a1212 50%,#4d0a0a 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Chinese Restaurant</span>
+          <span class="demo-card-name">M&K Chinese Food</span>
+          <span class="demo-card-desc">Family-owned Chinese takeout. 5-category menu with tabbed filtering — orange chicken, kung pao, chow mein.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/rys-poke/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#0e7c7b 0%,#0a5d5c 50%,#063e3d 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"/><path d="M18 12v.5"/><line x1="2" y1="12" x2="6" y2="12"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Poke / Hawaiian</span>
+          <span class="demo-card-name">Ry's Poke Shack</span>
+          <span class="demo-card-desc">Fresh poke bowls with a build-your-own section and signature bowl menu. Coastal, modern design.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/romels-auto/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#1f3a5f 0%,#162a44 50%,#0d1a2e 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3v-4l2-5h11l4 5v4h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">Auto Upholstery</span>
+          <span class="demo-card-name">Romel's Auto Upholstery</span>
+          <span class="demo-card-desc">Auto interior restoration — seats, headliners, convertible tops. Craftsmanship-focused with quote form.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a class="demo-card" href="demos/thermal-ac/index.html" data-reveal>
+        <div class="demo-card-visual" style="background:linear-gradient(135deg,#1e5f8e 0%,#154a6e 50%,#0d3249 100%)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4"/><circle cx="16" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
+        </div>
+        <div class="demo-card-body">
+          <span class="demo-card-tag">HVAC</span>
+          <span class="demo-card-name">Thermal Air Conditioning</span>
+          <span class="demo-card-desc">AC repair, installation, and heating service. 20+ years in Pasadena with 24/7 emergency line.</span>
+          <span class="demo-card-link">View demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
 </section>
 
 <!-- LOCAL -->
