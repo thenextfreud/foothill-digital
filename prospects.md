@@ -94,8 +94,8 @@
    - Website status: BASIC (Blizzfull template, generic)
    - Website notes: Has online ordering via Blizzfull subdomain. Functional but generic template.
    - Pitch angle: NEW SITE (custom site would outperform the Blizzfull template)
-   - Last contacted: 2026-09-02 (email to bad address bounced)
-   - Reply status: BOUNCED
+   - Last contacted: 2026-09-04 (resent to correct email atom66@sbcglobal.net)
+   - Reply status: NONE (previous bounce to wrong address)
    - Demo built: demos/sahara/index.html
 
 2. **Pasadena Perio (Dr Vincent Wang)** — Periodontics, 1535 E Walnut St, 91106
@@ -116,7 +116,7 @@
    - Website status: BASIC (simple, vintage-style, no online booking)
    - Website notes: Award-winning dentist but site has no scheduling, no patient portal.
    - Pitch angle: NEW SITE
-   - Last contacted: never
+   - Last contacted: 2026-09-04
    - Reply status: NONE
    - Demo built: none
 
@@ -199,6 +199,8 @@
 | 2026-09-02 | Pasadena Perio | pasadenaperio@gmail.com | Sent OK, no reply |
 | 2026-09-02 | Dogtopia | eastpasadena@dogtopia.com | Sent OK, no reply (should not have been sent) |
 | 2026-09-02 | Horizon Landscaping | tomofhorizon@earthlink.net | Sent OK, no reply |
+| 2026-09-04 | Sahara | atom66@sbcglobal.net | Sent OK (correct email) |
+| 2026-09-04 | Dr Mike Dentistry | mfkdds@sbcglobal.net | Sent OK |
 
 ## Note on LA3D, TalGarden, Horizon
 

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D&R Auto Glass — Windshield Repair & Replacement in Pasadena</title>
+<meta name="description" content="Windshield replacement, rock chip repair, and mobile auto glass service in Pasadena and the San Gabriel Valley. Same-day service available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--text:#1a2030;--bg:#f4f6fa;--surface:#e2e8f0;--primary:#1e4d8f;--on-primary:#fff;--accent:#2bb5e8;--accent-dark:#1a8fc0;--border:#c8d2e0;--muted:#5a6a82}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.demo-banner{background:var(--primary);color:var(--on-primary);text-align:center;padding:8px 16px;font-size:.8rem;font-weight:500;position:sticky;top:0;z-index:200}
+.demo-banner a{color:var(--accent);font-weight:600;text-decoration:underline}
+nav{position:sticky;top:33px;z-index:100;background:rgba(244,246,250,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.3rem;letter-spacing:-.02em;color:var(--primary);text-decoration:none}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--on-primary)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.9rem;transition:background .2s}
+.nav-cta:hover{background:#163e75}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:580px;align-items:stretch;max-width:1400px;margin:0 auto}
+.hero-content{padding:96px 64px;display:flex;flex-direction:column;justify-content:center}
+.hero-eyebrow{font-size:.8rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--primary)}
+.hero-sub{font-size:1.15rem;line-height:1.55;color:var(--muted);margin-bottom:32px;max-width:440px}
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--primary);color:var(--on-primary);padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#163e75;transform:translateY(-1px)}
+.btn-secondary{color:var(--text);font-weight:500;font-size:1rem;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px;transition:color .2s}
+.btn-secondary:hover{color:var(--accent-dark)}
+.hero-visual{background:linear-gradient(135deg,#1e4d8f 0%,#163e75 50%,#0e2a52 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 30% 20%,rgba(43,181,232,.12) 0%,transparent 40%),radial-gradient(circle at 70% 80%,rgba(255,255,255,.04) 0%,transparent 40%)}
+.hero-visual::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,transparent,transparent 14px,rgba(43,181,232,.04) 14px,rgba(43,181,232,.04) 16px)}
+.hero-visual-content{position:relative;z-index:1;text-align:center;color:var(--on-primary);padding:48px}
+.hero-visual-content svg{width:72px;height:72px;margin-bottom:24px;opacity:.9}
+.hero-visual-content h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;font-weight:400;font-style:italic;opacity:.9;line-height:1.4}
+.hero-badge{position:absolute;bottom:32px;left:32px;background:var(--bg);padding:16px 24px;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.2);display:flex;align-items:center;gap:12px;z-index:2}
+.hero-badge-stars{display:flex;gap:2px}
+.hero-badge-stars svg{width:18px;height:18px;color:var(--accent)}
+.hero-badge-text{font-size:.85rem;font-weight:600;color:var(--text)}
+.hero-badge-text span{display:block;font-weight:400;opacity:.6;font-size:.8rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-content{padding:48px 32px}.hero-visual{min-height:280px}}
+section{padding:96px 32px;max-width:1400px;margin:0 auto}
+.section-label{font-size:.8rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.section-title{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:24px;max-width:680px}
+.section-title em{font-style:italic;font-weight:400;color:var(--primary)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-text p{font-size:1.1rem;line-height:1.65;color:var(--muted);margin-bottom:20px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:32px}
+.about-stat{text-align:center;padding:24px 16px;background:var(--surface);border-radius:12px}
+.about-stat-num{font-family:'Fraunces',Georgia,serif;font-size:2rem;font-weight:600;color:var(--primary);line-height:1}
+.about-stat-label{font-size:.8rem;color:var(--muted);margin-top:8px}
+.about-visual{background:linear-gradient(135deg,var(--surface),var(--border));border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(30,77,143,.04) 20px,rgba(30,77,143,.04) 22px)}
+.about-visual svg{width:50%;height:50%;color:var(--primary);opacity:.8;position:relative;z-index:1}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+.services{background:var(--surface);max-width:none;padding-left:32px;padding-right:32px}
+.services-inner{max-width:1400px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.service-card{background:var(--bg);border-radius:12px;padding:32px;border:1px solid var(--border);transition:box-shadow .2s,transform .15s}
+.service-card:hover{box-shadow:0 4px 24px rgba(30,77,143,.08);transform:translateY(-2px)}
+.service-card-icon{width:48px;height:48px;background:rgba(30,77,143,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card-icon svg{width:24px;height:24px;color:var(--primary)}
+.service-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.service-card p{font-size:.9rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.why-card{text-align:center;padding:32px}
+.why-card-icon{width:56px;height:56px;background:rgba(30,77,143,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.why-card-icon svg{width:28px;height:28px;color:var(--primary)}
+.why-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.why-card p{font-size:.9rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.why{grid-template-columns:1fr}}
+.contact{background:var(--surface);max-width:none;padding-left:32px;padding-right:32px}
+.contact-inner{max-width:800px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.contact-form{display:grid;gap:16px;background:var(--bg);padding:48px;border-radius:12px;border:1px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{font-size:.85rem;font-weight:600;color:var(--text);display:block;margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:1rem;background:var(--bg);color:var(--text);outline:none;transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--primary)}
+.contact-form textarea{resize:vertical;min-height:120px}
+.contact-form button{background:var(--primary);color:var(--on-primary);border:none;padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;transition:background .2s,transform .15s;justify-self:start}
+.contact-form button:hover{background:#163e75;transform:translateY(-1px)}
+.contact-info h3{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:16px}
+.contact-info p{color:var(--muted);margin-bottom:8px;font-size:.95rem}
+.contact-info .phone{font-size:1.5rem;font-weight:600;color:var(--primary);text-decoration:none;display:block;margin:16px 0}
+.hours-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:16px}
+.hours-list li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+.hours-list li span:first-child{font-weight:500}
+.hours-list li span:last-child{color:var(--muted)}
+.hours-list li.closed span:last-child{color:var(--primary)}
+.location-map{margin-top:24px;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:32px;position:relative;overflow:hidden;height:160px;display:flex;align-items:center;justify-content:center}
+.location-map::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(30,77,143,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(30,77,143,.06) 1px,transparent 1px);background-size:30px 30px}
+.location-map-pin{position:relative;z-index:1;text-align:center}
+.location-map-pin svg{width:40px;height:40px;color:var(--primary)}
+.location-map-pin span{display:block;font-size:.8rem;color:var(--muted);margin-top:8px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.cta{text-align:center;padding:128px 32px;max-width:800px;margin:0 auto}
+.cta h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+.cta h2 em{font-style:italic;font-weight:400;color:var(--primary)}
+.cta p{font-size:1.1rem;color:var(--muted);margin-bottom:32px}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+footer{background:var(--text);color:var(--bg);padding:48px 32px}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.2rem;color:var(--accent)}
+.footer-info{font-size:.85rem;opacity:.6;line-height:1.5}
+.footer-info a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="demo-banner">This is a demo website built by <a href="https://thenextfreud.github.io/foothill-digital/">Foothill Digital</a> for D&amp;R Auto Glass. Want a site like this? <a href="mailto:hello@foothilldigital.co">Email us</a>.</div>
+<nav>
+<a href="#" class="nav-logo">D&amp;R Auto Glass</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why">Why Us</a></li>
+<li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Auto Glass · East Pasadena</div>
+<h1>Windshield repair, <em>done right the first time.</em></h1>
+<p class="hero-sub">Windshield replacement, rock chip repair, and mobile auto glass service in Pasadena. We come to you — same-day appointments available throughout the San Gabriel Valley.</p>
+<div class="hero-ctas">
+<a href="#contact" class="btn-primary">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+Get a Free Quote
+</a>
+<a href="#services" class="btn-secondary">Our Services</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-visual-content">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3l1.5 3L5 9l1.5 3L5 15l1.5 3L5 21h14l-1.5-3 1.5-3-1.5-3 1.5-3-1.5-3L19 3z"/><path d="M12 7v6M12 16v.5"/><circle cx="12" cy="14" r="2"/></svg>
+<h2>"A crack spreads fast.<br>Let's get it fixed<br>before it gets worse."</h2>
+</div>
+<div class="hero-badge">
+<div class="hero-badge-stars">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+</div>
+<div class="hero-badge-text">209 Reviews<span>Yelp</span></div>
+</div>
+</div>
+</section>
+<section id="about" class="about">
+<div class="about-text">
+<div class="section-label">Our Story</div>
+<h2 class="section-title">Auto glass experts on <em>Colorado Boulevard.</em></h2>
+<p>D&R Auto Glass has been repairing and replacing windshields in Pasadena for over 15 years. From a small rock chip to a full windshield replacement, we handle every job with the same care — because your safety depends on it.</p>
+<p>We work on all makes and models, use OEM-quality glass, and offer mobile service throughout the San Gabriel Valley. We come to your home or office, complete the job on-site, and get you back on the road safely.</p>
+<div class="about-stats">
+<div class="about-stat">
+<div class="about-stat-num">15+</div>
+<div class="about-stat-label">Years Experience</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-num">209</div>
+<div class="about-stat-label">Yelp Reviews</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-num">Same</div>
+<div class="about-stat-label">Day Service</div>
+</div>
+</div>
+</div>
+<div class="about-visual">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3l1.5 3L5 9l1.5 3L5 15l1.5 3L5 21h14l-1.5-3 1.5-3-1.5-3 1.5-3-1.5-3L19 3z"/><path d="M12 7v6M12 16v.5"/><circle cx="12" cy="14" r="2"/></svg>
+</div>
+</section>
+<section id="services" class="services">
+<div class="services-inner">
+<div class="section-label">What We Do</div>
+<h2 class="section-title">Full auto glass service, <em>mobile or in-shop.</em></h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l1.5 3L5 9l1.5 3L5 15l1.5 3L5 21h14l-1.5-3 1.5-3-1.5-3 1.5-3-1.5-3L19 3z"/><path d="M12 7v6"/></svg></div>
+<h3>Windshield Replacement</h3>
+<p>Full windshield replacement with OEM-quality glass. All makes and models. Proper adhesive cure time and safe-drive-away guarantee on every install.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 15v.5"/></svg></div>
+<h3>Rock Chip Repair</h3>
+<p>Small chips and cracks up to 3 inches can often be repaired without replacing the whole windshield. Fast, affordable, and usually covered by insurance.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16"/></svg></div>
+<h3>Side Window Replacement</h3>
+<p>Driver and passenger side window replacement. Tempered and laminated glass available for all vehicle types — cars, trucks, SUVs, and vans.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 12h16M12 4v16"/></svg></div>
+<h3>Rear Window Replacement</h3>
+<p>Back glass and rear windshield replacement, including defrost grid reconnection. Heated and privacy glass options for most vehicles.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M5 10l1 8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-8M7 10V6a5 5 0 0 1 10 0v4"/></svg></div>
+<h3>Mobile Auto Glass</h3>
+<p>We come to you — home, office, or anywhere in the San Gabriel Valley. Mobile service at no extra charge for most locations within Pasadena and surrounding areas.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+<h3>Insurance Claims</h3>
+<p>We work with all major insurance companies and handle the paperwork for you. Most comprehensive policies cover chip repair with zero deductible.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why">
+<div class="section-label">Why Choose Us</div>
+<h2 class="section-title">Safe installs, <em>honest pricing.</em></h2>
+<div class="why">
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+<h3>OEM-Quality Glass</h3>
+<p>We use manufacturer-grade glass and adhesives — never cheap aftermarket substitutes. Your windshield is a structural part of your vehicle; we treat it that way.</p>
+</div>
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M5 10l1 8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-8"/></svg></div>
+<h3>Mobile Service</h3>
+<p>No need to come to us — we come to you. Mobile service throughout Pasadena, Altadena, Sierra Madre, Arcadia, and the San Gabriel Valley at no extra charge.</p>
+</div>
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+<h3>Same-Day Service</h3>
+<p>Cracks spread fast. We offer same-day appointments for most jobs — call in the morning, we'll have you fixed up by afternoon. Emergency service available.</p>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<div class="contact-inner">
+<div class="section-label">Get Started</div>
+<h2 class="section-title">Get a <em>free quote</em> on your auto glass.</h2>
+<p style="color:var(--muted);font-size:1.05rem">Call us or fill out the form below. Tell us your vehicle and the damage — we'll give you a quote and schedule the repair.</p>
+<div class="contact-grid">
+<form class="contact-form" onsubmit="handleQuote(event)">
+<div class="form-row">
+<div><label for="name">Name</label><input type="text" id="name" required></div>
+<div><label for="phone">Phone</label><input type="tel" id="phone" required></div>
+</div>
+<div><label for="email">Email</label><input type="email" id="email" required></div>
+<div><label for="vehicle">Vehicle (Year / Make / Model)</label><input type="text" id="vehicle" placeholder="e.g. 2018 Honda Civic"></div>
+<div><label for="damage">Damage Description</label><textarea id="damage" placeholder="Tell us about the crack, chip, or broken window..."></textarea></div>
+<button type="submit">Get Free Quote</button>
+</form>
+<div class="contact-info">
+<h3>D&amp;R Auto Glass</h3>
+<p>2754 E Colorado Blvd</p>
+<p>Pasadena, CA 91107</p>
+<a href="#" class="phone">Call for Appointment</a>
+<div class="section-label" style="margin-top:24px">Shop Hours</div>
+<ul class="hours-list">
+<li><span>Monday</span><span>8:00 AM – 6:00 PM</span></li>
+<li><span>Tuesday</span><span>8:00 AM – 6:00 PM</span></li>
+<li><span>Wednesday</span><span>8:00 AM – 6:00 PM</span></li>
+<li><span>Thursday</span><span>8:00 AM – 6:00 PM</span></li>
+<li><span>Friday</span><span>8:00 AM – 6:00 PM</span></li>
+<li><span>Saturday</span><span>9:00 AM – 4:00 PM</span></li>
+<li class="closed"><span>Sunday</span><span>Closed</span></li>
+</ul>
+<div class="location-map">
+<div class="location-map-pin">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+<span>2754 E Colorado Blvd, Pasadena</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta">
+<h2>Got a crack? <em>Don't wait.</em></h2>
+<p>A small chip can spread across your entire windshield overnight. Get it fixed today — mobile service available throughout Pasadena and the San Gabriel Valley.</p>
+<div class="cta-buttons">
+<a href="#contact" class="btn-primary">Get a Free Quote</a>
+<a href="#services" class="btn-secondary">View Services</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-logo">D&amp;R Auto Glass</div>
+<div class="footer-info">
+2754 E Colorado Blvd, Pasadena, CA 91107<br>
+Auto glass repair &amp; replacement in East Pasadena
+</div>
+</div>
+</footer>
+<script>
+function handleQuote(e){e.preventDefault();var btn=e.target.querySelector('button');btn.textContent="Thanks! We'll be in touch soon.";btn.style.background='var(--accent)';btn.disabled=true;e.target.querySelectorAll('input,textarea').forEach(function(i){i.value='';i.disabled=true})}
+</script>
+</body>
+</html>
