@@ -29,26 +29,26 @@
    - Demo built: demos/mk-chinese/index.html
 
 10. **Tap N Tile Inc** — Kitchen & bath, 3191 E Foothill Blvd, 91107
-    - Phone: 626-405-0098 (VERIFIED from listings)
-    - Email: none found
+    - Phone: (626) 405-0098 (VERIFIED from Yelp/Houzz) / (626) 893-5782 (from BuildZoom)
+    - Email: none found (Cloudflare-protected on directory sites, not publicly listed)
     - Website: tapntile.com
     - Website status: BROKEN (domain does not load)
-    - Website notes: Inc since 1998. LinkedIn exists but homepage is dead.
+    - Website notes: Inc since 1998. Owners: Joan Dimen, George San Mateo Dimen. Staff: Priscilla, Ricardo. 26 Yelp reviews, 4.7 stars. 26 Houzz reviews, 5.0 stars. License #591416 (Tile, General Building).
     - Pitch angle: NEW SITE
     - Last contacted: never
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/tap-n-tile/index.html
 
 12. **D&R Auto Glass** — Auto glass, 2754 E Colorado Blvd, 91107
-    - Phone: from listings (needs verification)
-    - Email: none found
-    - Website: none
-    - Website status: NONE
-    - Website notes: No web presence beyond directory listings. CEO: Fernando Arriaga.
-    - Pitch angle: NEW SITE
-    - Last contacted: never
+    - Phone: (626) 487-7700 (VERIFIED from their website)
+    - Email: DandRAutoGlass@icloud.com (VERIFIED from their website)
+    - Website: dandrautoglass.com
+    - Website status: BASIC (template site with contact form, no online booking)
+    - Website notes: Re-audited 2026-09-03. Site has Home/About/Services/Contact/Gallery pages and a contact form. Family-owned. Hours Mon-Sat 9-5:30. Template site, not mobile-optimized, no real online functionality beyond a form.
+    - Pitch angle: NEW SITE (custom site would outperform the template)
+    - Last contacted: 2026-09-03
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/dr-auto-glass/index.html
 
 13. **Romel's Auto Upholstery** — Auto upholstery, 2561 E Foothill Blvd, 91107
     - Phone: (626) 201-3931 (VERIFIED from Yelp/MapQuest)
@@ -62,24 +62,24 @@
     - Demo built: demos/romels-auto/index.html
 
 14. **Genesis Automotive** — Auto repair, 1920 E Walnut St #3, 91107
-    - Phone: from listings (needs verification)
+    - Phone: (626) 568-0718 (VERIFIED from multiple listings)
     - Email: none found
     - Website: none
     - Website status: NONE
-    - Website notes: No website for the Pasadena location. Sole proprietor, licensed since 2019.
+    - Website notes: No website. Owner: Norton Hpauyam. Sole proprietor, licensed since 2019. 103 Yelp reviews, 4.8 stars.
     - Pitch angle: NEW SITE
     - Last contacted: never
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/genesis-automotive/index.html
 
 15. **Thermal Air Conditioning Co** — HVAC, 3314 E Colorado Blvd, 91107
     - Phone: (626) 793-9927 (VERIFIED from listings)
-    - Email: none found (PO Box 70737, Pasadena 91117 for mail)
+    - Email: service@thermalairco.com (VERIFIED from Blue Book ProView)
     - Website: thermalairco.com
     - Website status: BROKEN ("undergoing construction" placeholder)
-    - Website notes: CEO: Travis Kelly. 5-9 employees. Est. 2005. Site is a cPanel placeholder.
+    - Website notes: CEO: Robert Canizalez (from corporate filing). 5-9 employees. Est. 2005. Site is a cPanel placeholder.
     - Pitch angle: NEW SITE
-    - Last contacted: never
+    - Last contacted: 2026-09-03
     - Reply status: NONE
     - Demo built: demos/thermal-ac/index.html
 
@@ -201,6 +201,8 @@
 | 2026-09-02 | Horizon Landscaping | tomofhorizon@earthlink.net | Sent OK, no reply |
 | 2026-09-04 | Sahara | atom66@sbcglobal.net | Sent OK (correct email) |
 | 2026-09-04 | Dr Mike Dentistry | mfkdds@sbcglobal.net | Sent OK |
+| 2026-09-03 | D&R Auto Glass | DandRAutoGlass@icloud.com | Sent OK |
+| 2026-09-03 | Thermal AC | service@thermalairco.com | Sent OK |
 
 ## Note on LA3D, TalGarden, Horizon
 
