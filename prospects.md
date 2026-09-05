@@ -83,6 +83,28 @@
     - Reply status: NONE
     - Demo built: demos/thermal-ac/index.html
 
+16. **Blue Diamond Salon** — Hair & nail salon, 3550 E Foothill Blvd, 91107
+    - Phone: none found (Owner: Travis Nguyen)
+    - Email: none found
+    - Website: none
+    - Website status: NONE
+    - Website notes: Inc since 2014. No web presence beyond business filings.
+    - Pitch angle: NEW SITE
+    - Last contacted: never
+    - Reply status: NONE
+    - Demo built: none
+
+17. **East Pasadena Shade Co** — Window treatments, 2723 E Colorado Blvd, 91107
+    - Phone: (626) 793-9101 (VERIFIED from listings)
+    - Email: none found
+    - Website: none found
+    - Website status: NONE
+    - Website notes: Since 1965. Custom window treatments, draperies, blinds, shutters. 1-4 employees.
+    - Pitch angle: NEW SITE
+    - Last contacted: never
+    - Reply status: NONE
+    - Demo built: none
+
 ## Tier 2 — Has a site but it's dated/basic (BASIC) — pitch redesign or SEO
 
 1. **Sahara Restaurant** — Mediterranean, 2226 E Colorado Blvd, 91107
@@ -127,6 +149,39 @@
     - Website status: BASIC (behind Cloudflare captcha, family-owned since 1978)
     - Website notes: Could not fully assess — site is behind a captcha wall. LinkedIn says they sell Maytag, Whirlpool, Kitchenaid, etc.
     - Pitch angle: NEW SITE (needs re-audit with browser to see actual content)
+    - Last contacted: never
+    - Reply status: NONE
+    - Demo built: none
+
+18. **DENA CUTZ** — Barbershop, 2100 E Foothill Blvd, 91107
+    - Phone: (626) 635-4931 (VERIFIED from their website)
+    - Email: denacutz@icloud.com (VERIFIED from their website)
+    - Website: denacutz.com
+    - Website status: BASIC (template site-builder, generic design, no online booking)
+    - Website notes: Has Home/About/Services/Gallery/Contact pages and a contact form. 18 years experience. Walk-ins and appointments. No online booking system. Duplicated content blocks suggest auto-generated template.
+    - Pitch angle: NEW SITE
+    - Last contacted: 2026-09-03
+    - Reply status: NONE
+    - Demo built: none
+
+19. **Michelle's Antiques & Lighting** — Antiques, 2546 E Colorado Blvd, 91107
+    - Phone: (626) 796-7989 (VERIFIED from their site) / (714) 348-1813 (mobile, from site)
+    - Email: m.bc2@verizon.net (VERIFIED from mailto link on site)
+    - Website: eastcoloradoantiqu.wixsite.com/michelles-antiques
+    - Website status: BASIC (Wix template, copyright 2015, dated)
+    - Website notes: Owner: Michelle Beiner. Has gallery pages for antiques, lighting, lighting restoration, decorative, estate sales. Google Store Tour linked. Time Warner Cable documentary featured. Very dated Wix design.
+    - Pitch angle: NEW SITE
+    - Last contacted: 2026-09-03
+    - Reply status: NONE
+    - Demo built: none
+
+20. **Pasadena Automotive Repair** — Auto repair, 2364 E Foothill Blvd, 91107
+    - Phone: (626) 793-1800 (VERIFIED from their site)
+    - Email: none found (contact form only)
+    - Website: pasadenaautomotive.com
+    - Website status: BASIC (copyright 2017, dated template, minimal content)
+    - Website notes: Has Home/About/Diagnostics/Alignment/Blog/Contact. Very thin content. Blog appears inactive. Built by The Brandvertisers.
+    - Pitch angle: NEW SITE
     - Last contacted: never
     - Reply status: NONE
     - Demo built: none
@@ -179,12 +234,12 @@
 
 | Tier | Count | Action |
 |------|-------|--------|
-| 1 — NONE/BROKEN | 7 | Build demos, send outreach |
-| 2 — BASIC | 4 | Build demos or pitch SEO, send outreach |
+| 1 — NONE/BROKEN | 9 | Build demos, send outreach |
+| 2 — BASIC | 7 | Build demos or pitch SEO, send outreach |
 | 3 — FUNCTIONAL | 1 | Pitch SEO/reviews only, no demo |
 | 4 — POLISHED | 3 | Drop entirely |
 
-**Valid prospects: 11** (7 Tier 1 + 4 Tier 2)
+**Valid prospects: 16** (9 Tier 1 + 7 Tier 2)
 **Drop: 3** (Dogtopia, Ry's Poke, K-9 Klipping)
 **Wrong-pitch: 1** (Dots Cafe — has functional site, demo was unnecessary)
 
@@ -203,6 +258,8 @@
 | 2026-09-04 | Dr Mike Dentistry | mfkdds@sbcglobal.net | Sent OK |
 | 2026-09-03 | D&R Auto Glass | DandRAutoGlass@icloud.com | Sent OK |
 | 2026-09-03 | Thermal AC | service@thermalairco.com | Sent OK |
+| 2026-09-03 | DENA CUTZ | denacutz@icloud.com | Sent OK |
+| 2026-09-03 | Michelle's Antiques | m.bc2@verizon.net | Sent OK |
 
 ## Note on LA3D, TalGarden, Horizon
 
