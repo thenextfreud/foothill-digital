@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michelle's Antiques, Lighting & Estate Sales — East Pasadena</title>
+<meta name="description" content="Quality antiques, lighting restoration, and estate sales in Pasadena. Spanish Revival, Mid-Century Modern, Arts & Crafts, and Art Deco. Since 1965 on Colorado Blvd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--text:#2a2018;--bg:#f9f5ef;--surface:#ede4d4;--primary:#6b4a2e;--on-primary:#fff;--accent:#c4965a;--accent-dark:#a07a3e;--border:#d8ccb8;--muted:#6b5d4f}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.demo-banner{background:var(--primary);color:var(--on-primary);text-align:center;padding:8px 16px;font-size:.8rem;font-weight:500;position:sticky;top:0;z-index:200}
+.demo-banner a{color:var(--accent);font-weight:600;text-decoration:underline}
+nav{position:sticky;top:33px;z-index:100;background:rgba(249,245,239,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.15rem;letter-spacing:-.02em;color:var(--primary);text-decoration:none}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--accent-dark)}
+.nav-cta{background:var(--primary);color:var(--on-primary)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.9rem;transition:background .2s}
+.nav-cta:hover{background:#4a321e}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:580px;align-items:stretch;max-width:1400px;margin:0 auto}
+.hero-content{padding:96px 64px;display:flex;flex-direction:column;justify-content:center}
+.hero-eyebrow{font-size:.8rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--primary)}
+.hero-sub{font-size:1.15rem;line-height:1.55;color:var(--muted);margin-bottom:32px;max-width:440px}
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--primary);color:var(--on-primary);padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#4a321e;transform:translateY(-1px)}
+.btn-secondary{color:var(--text);font-weight:500;font-size:1rem;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px;transition:color .2s}
+.btn-secondary:hover{color:var(--accent-dark)}
+.hero-visual{background:linear-gradient(135deg,#6b4a2e 0%,#4a321e 50%,#2a1e10 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 30% 20%,rgba(196,150,90,.15) 0%,transparent 40%),radial-gradient(circle at 70% 80%,rgba(255,255,255,.04) 0%,transparent 40%)}
+.hero-visual::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(196,150,90,.04) 20px,rgba(196,150,90,.04) 22px),repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(196,150,90,.04) 20px,rgba(196,150,90,.04) 22px)}
+.hero-visual-content{position:relative;z-index:1;text-align:center;color:var(--on-primary);padding:48px}
+.hero-visual-content svg{width:72px;height:72px;margin-bottom:24px;opacity:.9}
+.hero-visual-content h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;font-weight:400;font-style:italic;opacity:.9;line-height:1.4}
+.hero-badge{position:absolute;bottom:32px;left:32px;background:var(--bg);padding:16px 24px;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.2);display:flex;align-items:center;gap:12px;z-index:2}
+.hero-badge-text{font-size:.85rem;font-weight:600;color:var(--text)}
+.hero-badge-text span{display:block;font-weight:400;opacity:.6;font-size:.8rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-content{padding:48px 32px}.hero-visual{min-height:280px}}
+section{padding:96px 32px;max-width:1400px;margin:0 auto}
+.section-label{font-size:.8rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.section-title{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:24px;max-width:680px}
+.section-title em{font-style:italic;font-weight:400;color:var(--primary)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-text p{font-size:1.1rem;line-height:1.65;color:var(--muted);margin-bottom:20px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:32px}
+.about-stat{text-align:center;padding:24px 16px;background:var(--surface);border-radius:12px}
+.about-stat-num{font-family:'Fraunces',Georgia,serif;font-size:2rem;font-weight:600;color:var(--primary);line-height:1}
+.about-stat-label{font-size:.8rem;color:var(--muted);margin-top:8px}
+.about-visual{background:linear-gradient(135deg,var(--surface),var(--border));border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(107,74,46,.04) 20px,rgba(107,74,46,.04) 22px)}
+.about-visual svg{width:50%;height:50%;color:var(--primary);opacity:.8;position:relative;z-index:1}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+.services{background:var(--surface);max-width:none;padding-left:32px;padding-right:32px}
+.services-inner{max-width:1400px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.service-card{background:var(--bg);border-radius:12px;padding:32px;border:1px solid var(--border);transition:box-shadow .2s,transform .15s}
+.service-card:hover{box-shadow:0 4px 24px rgba(107,74,46,.08);transform:translateY(-2px)}
+.service-card-icon{width:48px;height:48px;background:rgba(107,74,46,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card-icon svg{width:24px;height:24px;color:var(--primary)}
+.service-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.service-card p{font-size:.9rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+.styles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.style-card{background:var(--surface);border-radius:12px;padding:32px 16px;text-align:center;border:1px solid var(--border);transition:box-shadow .2s,transform .15s}
+.style-card:hover{box-shadow:0 4px 24px rgba(107,74,46,.08);transform:translateY(-2px)}
+.style-card-icon{width:40px;height:40px;margin:0 auto 16px;color:var(--primary)}
+.style-card h3{font-family:'Fraunces',Georgia,serif;font-size:1rem;font-weight:600;margin-bottom:4px}
+.style-card p{font-size:.8rem;color:var(--muted)}
+@media(max-width:768px){.styles{grid-template-columns:repeat(2,1fr)}}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.why-card{text-align:center;padding:32px}
+.why-card-icon{width:56px;height:56px;background:rgba(107,74,46,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.why-card-icon svg{width:28px;height:28px;color:var(--primary)}
+.why-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.why-card p{font-size:.9rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.why{grid-template-columns:1fr}}
+.contact{background:var(--surface);max-width:none;padding-left:32px;padding-right:32px}
+.contact-inner{max-width:800px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.contact-form{display:grid;gap:16px;background:var(--bg);padding:48px;border-radius:12px;border:1px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{font-size:.85rem;font-weight:600;color:var(--text);display:block;margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:1rem;background:var(--bg);color:var(--text);outline:none;transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--primary)}
+.contact-form textarea{resize:vertical;min-height:120px}
+.contact-form button{background:var(--primary);color:var(--on-primary);border:none;padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;transition:background .2s,transform .15s;justify-self:start}
+.contact-form button:hover{background:#4a321e;transform:translateY(-1px)}
+.contact-info h3{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:16px}
+.contact-info p{color:var(--muted);margin-bottom:8px;font-size:.95rem}
+.contact-info .phone{font-size:1.5rem;font-weight:600;color:var(--primary);text-decoration:none;display:block;margin:16px 0}
+.hours-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:16px}
+.hours-list li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+.hours-list li span:first-child{font-weight:500}
+.hours-list li span:last-child{color:var(--muted)}
+.hours-list li.closed span:last-child{color:var(--primary)}
+.location-map{margin-top:24px;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:32px;position:relative;overflow:hidden;height:160px;display:flex;align-items:center;justify-content:center}
+.location-map::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(107,74,46,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(107,74,46,.06) 1px,transparent 1px);background-size:30px 30px}
+.location-map-pin{position:relative;z-index:1;text-align:center}
+.location-map-pin svg{width:40px;height:40px;color:var(--primary)}
+.location-map-pin span{display:block;font-size:.8rem;color:var(--muted);margin-top:8px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.cta{text-align:center;padding:128px 32px;max-width:800px;margin:0 auto}
+.cta h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+.cta h2 em{font-style:italic;font-weight:400;color:var(--primary)}
+.cta p{font-size:1.1rem;color:var(--muted);margin-bottom:32px}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+footer{background:var(--text);color:var(--bg);padding:48px 32px}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.2rem;color:var(--accent)}
+.footer-info{font-size:.85rem;opacity:.6;line-height:1.5}
+.footer-info a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="demo-banner">This is a demo website built by <a href="https://thenextfreud.github.io/foothill-digital/">Foothill Digital</a> for Michelle's Antiques. Want a site like this? <a href="mailto:hello@foothilldigital.co">Email us</a>.</div>
+<nav>
+<a href="#" class="nav-logo">Michelle's Antiques</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#styles">Collections</a></li>
+<li><a href="#contact" class="nav-cta">Visit Us</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Antiques &amp; Lighting · East Pasadena</div>
+<h1>Timeless pieces, <em>carefully curated.</em></h1>
+<p class="hero-sub">Quality antiques, expert lighting restoration, and estate sales on Colorado Blvd. Spanish Revival, Mid-Century Modern, Arts &amp; Crafts, and Art Deco — sourced with an eye for detail.</p>
+<div class="hero-ctas">
+<a href="#contact" class="btn-primary">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+Visit the Shop
+</a>
+<a href="#services" class="btn-secondary">Our Services</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-visual-content">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="6"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+<h2>"My job is to source quality antiques<br>and lighting for my clients' consideration —<br>and to give you ideas of how they can<br>transform your home."</h2>
+</div>
+<div class="hero-badge">
+<div class="hero-badge-text">Featured on<span>Time Warner Cable</span></div>
+</div>
+</div>
+</section>
+<section id="about" class="about">
+<div class="about-text">
+<div class="section-label">Our Story</div>
+<h2 class="section-title">A Colorado Blvd landmark for <em>quality antiques.</em></h2>
+<p>Michelle Beiner has been sourcing and selling quality antiques, lighting, and decorative art in East Pasadena for decades. Her shop on Colorado Blvd is a destination for collectors, designers, and anyone looking for that perfect piece with a story behind it.</p>
+<p>From Spanish Revival to Mid-Century Modern, Arts &amp; Crafts to Art Deco — every piece is hand-selected for quality, character, and authenticity. Michelle also offers expert antique lighting re-wiring and restoration, and runs a successful estate sale company.</p>
+<div class="about-stats">
+<div class="about-stat">
+<div class="about-stat-num">Decades</div>
+<div class="about-stat-label">On Colorado Blvd</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-num">100s</div>
+<div class="about-stat-label">Pieces in Stock</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-num">Expert</div>
+<div class="about-stat-label">Lighting Restoration</div>
+</div>
+</div>
+</div>
+<div class="about-visual">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="6"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+</div>
+</section>
+<section id="services" class="services">
+<div class="services-inner">
+<div class="section-label">What We Offer</div>
+<h2 class="section-title">Antiques, restoration, and <em>estate sales.</em></h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg></div>
+<h3>Antique Furniture</h3>
+<p>Quality antique furniture across many styles — Spanish Revival, Mid-Century Modern, Arts &amp; Crafts, Art Deco. Indoor and outdoor pieces, garden and architectural antiques.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="6"/></svg></div>
+<h3>Lighting Restoration</h3>
+<p>Expert antique lighting re-wiring and restoration. Bring your items to the shop for a free estimate. Featured in a Time Warner Cable documentary on light restoration.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+<h3>Estate Sales</h3>
+<p>Full-service estate sale company including retail and commercial liquidation. Professional, discreet, and thorough — maximizing value for every estate.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-5"/></svg></div>
+<h3>Decorative Art</h3>
+<p>Curated selection of decorative art and accessories — mirrors, paintings, sculptures, and unique pieces that add character to any space.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7z"/></svg></div>
+<h3>Sourcing Service</h3>
+<p>Looking for something specific? Michelle sources pieces on request. Tell us what you're looking for and we'll keep an eye out — decades of connections in the antique world.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+<h3>Google Store Tour</h3>
+<p>Can't visit in person? Take a virtual tour of the shop on Google. Browse our inventory from anywhere, then call or visit to see pieces in person.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="styles">
+<div class="section-label">Our Collections</div>
+<h2 class="section-title">Styles we <em>specialize in.</em></h2>
+<div class="styles">
+<div class="style-card">
+<svg class="style-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+<h3>Spanish Revival</h3>
+<p>Wrought iron, carved wood, terra cotta</p>
+</div>
+<div class="style-card">
+<svg class="style-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg>
+<h3>Mid-Century Modern</h3>
+<p>Clean lines, teak, organic forms</p>
+</div>
+<div class="style-card">
+<svg class="style-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 12h16M12 4v16"/></svg>
+<h3>Arts &amp; Crafts</h3>
+<p>Quarter-sawn oak, hand-hammered copper</p>
+</div>
+<div class="style-card">
+<svg class="style-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+<h3>Art Deco</h3>
+<p>Geometric patterns, chrome, lacquer</p>
+</div>
+</div>
+</section>
+<section id="why">
+<div class="section-label">Why Visit Us</div>
+<h2 class="section-title">A shop where <em>every piece has a story.</em></h2>
+<div class="why">
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+<h3>Hand-Selected Quality</h3>
+<p>Every piece is personally sourced by Michelle for quality, authenticity, and character. No mass-produced reproductions — just genuine antiques with real history.</p>
+</div>
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+<h3>Expert Knowledge</h3>
+<p>Decades of experience in antiques and lighting restoration. Featured in a Time Warner Cable documentary. Michelle knows the history, value, and story behind every piece.</p>
+</div>
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+<h3>Always Changing</h3>
+<p>Our merchandise changes often — new pieces arrive weekly. Make us one of your regular shopping destinations and you'll always find something new and unexpected.</p>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<div class="contact-inner">
+<div class="section-label">Visit Us</div>
+<h2 class="section-title">Come <em>browse the collection.</em></h2>
+<p style="color:var(--muted);font-size:1.05rem">Call us at <a href="tel:6267967989" style="color:var(--primary);font-weight:600;text-decoration:none">(626) 796-7989</a> or fill out the form below. Looking for something specific? Let us know — we'll keep an eye out.</p>
+<div class="contact-grid">
+<form class="contact-form" onsubmit="handleQuote(event)">
+<div class="form-row">
+<div><label for="name">Name</label><input type="text" id="name" required></div>
+<div><label for="phone">Phone</label><input type="tel" id="phone"></div>
+</div>
+<div><label for="email">Email</label><input type="email" id="email" required></div>
+<div><label for="interest">What are you looking for?</label>
+<select id="interest">
+<option>Antique Furniture</option>
+<option>Lighting Restoration</option>
+<option>Estate Sales</option>
+<option>Decorative Art</option>
+<option>Sourcing Request</option>
+<option>Just Browsing</option>
+</select></div>
+<div><label for="message">Message</label><textarea id="message" placeholder="Tell us what you're looking for, or just say hello..."></textarea></div>
+<button type="submit">Send Message</button>
+</form>
+<div class="contact-info">
+<h3>Michelle's Antiques</h3>
+<p>2546 E Colorado Blvd</p>
+<p>Pasadena, CA 91107</p>
+<a href="tel:6267967989" class="phone">(626) 796-7989</a>
+<p style="font-size:.85rem">Mobile: (714) 348-1813</p>
+<div class="section-label" style="margin-top:24px">Shop Hours</div>
+<ul class="hours-list">
+<li class="closed"><span>Monday</span><span>By Chance</span></li>
+<li><span>Tuesday</span><span>11:00 AM – 5:30 PM</span></li>
+<li><span>Wednesday</span><span>11:00 AM – 5:30 PM</span></li>
+<li><span>Thursday</span><span>11:00 AM – 5:30 PM</span></li>
+<li><span>Friday</span><span>11:00 AM – 5:30 PM</span></li>
+<li><span>Saturday</span><span>11:00 AM – 5:30 PM</span></li>
+<li><span>Sunday</span><span>11:00 AM – 5:00 PM</span></li>
+</ul>
+<div class="location-map">
+<div class="location-map-pin">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+<span>2546 E Colorado Blvd, Pasadena</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta">
+<h2>Looking for something <em>special?</em></h2>
+<p>Visit the shop on Colorado Blvd, or call Michelle directly. New pieces arrive weekly — you never know what you'll find.</p>
+<div class="cta-buttons">
+<a href="tel:6267967989" class="btn-primary">Call (626) 796-7989</a>
+<a href="#contact" class="btn-secondary">Send a Message</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-logo">Michelle's Antiques</div>
+<div class="footer-info">
+2546 E Colorado Blvd, Pasadena, CA 91107 · (626) 796-7989<br>
+Antiques, lighting restoration &amp; estate sales in East Pasadena
+</div>
+</div>
+</footer>
+<script>
+function handleQuote(e){e.preventDefault();var btn=e.target.querySelector('button');btn.textContent="Thanks! We'll be in touch soon.";btn.style.background='var(--accent)';btn.disabled=true;e.target.querySelectorAll('input,textarea,select').forEach(function(i){i.value='';i.disabled=true})}
+</script>
+</body>
+</html>

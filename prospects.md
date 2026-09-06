@@ -162,7 +162,7 @@
     - Pitch angle: NEW SITE
     - Last contacted: 2026-09-03
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/dena-cutz/index.html
 
 19. **Michelle's Antiques & Lighting** — Antiques, 2546 E Colorado Blvd, 91107
     - Phone: (626) 796-7989 (VERIFIED from their site) / (714) 348-1813 (mobile, from site)
@@ -173,7 +173,7 @@
     - Pitch angle: NEW SITE
     - Last contacted: 2026-09-03
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/michelles-antiques/index.html
 
 20. **Pasadena Automotive Repair** — Auto repair, 2364 E Foothill Blvd, 91107
     - Phone: (626) 793-1800 (VERIFIED from their site)
@@ -184,7 +184,7 @@
     - Pitch angle: NEW SITE
     - Last contacted: never
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/pasadena-automotive/index.html
 
 ## Tier 3 — Has a functional site (FUNCTIONAL) — pitch SEO/reviews, not a new site
 
