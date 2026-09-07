@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Diamond Salon — Hair & Nail Salon in East Pasadena</title>
+<meta name="description" content="Hair styling, coloring, manicures, and nail services in Pasadena. Full-service salon on Foothill Blvd. Walk-ins and appointments welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--text:#1a1520;--bg:#faf5f8;--surface:#f0e4ec;--primary:#8b3a6e;--on-primary:#fff;--accent:#d4658e;--accent-dark:#b04a74;--border:#e0cdd8;--muted:#6b5a68}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.demo-banner{background:var(--primary);color:var(--on-primary);text-align:center;padding:8px 16px;font-size:.8rem;font-weight:500;position:sticky;top:0;z-index:200}
+.demo-banner a{color:var(--accent);font-weight:600;text-decoration:underline}
+nav{position:sticky;top:33px;z-index:100;background:rgba(250,245,248,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.3rem;letter-spacing:-.02em;color:var(--primary);text-decoration:none}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--on-primary)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.9rem;transition:background .2s}
+.nav-cta:hover{background:#6b2a54}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:580px;align-items:stretch;max-width:1400px;margin:0 auto}
+.hero-content{padding:96px 64px;display:flex;flex-direction:column;justify-content:center}
+.hero-eyebrow{font-size:.8rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--primary)}
+.hero-sub{font-size:1.15rem;line-height:1.55;color:var(--muted);margin-bottom:32px;max-width:440px}
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--primary);color:var(--on-primary);padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#6b2a54;transform:translateY(-1px)}
+.btn-secondary{color:var(--text);font-weight:500;font-size:1rem;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px;transition:color .2s}
+.btn-secondary:hover{color:var(--accent-dark)}
+.hero-visual{background:linear-gradient(135deg,#8b3a6e 0%,#6b2a54 50%,#4a1a3a 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 30% 20%,rgba(212,101,142,.15) 0%,transparent 40%),radial-gradient(circle at 70% 80%,rgba(255,255,255,.04) 0%,transparent 40%)}
+.hero-visual::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,transparent,transparent 14px,rgba(212,101,142,.04) 14px,rgba(212,101,142,.04) 16px)}
+.hero-visual-content{position:relative;z-index:1;text-align:center;color:var(--on-primary);padding:48px}
+.hero-visual-content svg{width:72px;height:72px;margin-bottom:24px;opacity:.9}
+.hero-visual-content h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;font-weight:400;font-style:italic;opacity:.9;line-height:1.4}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-content{padding:48px 32px}.hero-visual{min-height:280px}}
+section{padding:96px 32px;max-width:1400px;margin:0 auto}
+.section-label{font-size:.8rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.section-title{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:24px;max-width:680px}
+.section-title em{font-style:italic;font-weight:400;color:var(--primary)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-text p{font-size:1.1rem;line-height:1.65;color:var(--muted);margin-bottom:20px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:32px}
+.about-stat{text-align:center;padding:24px 16px;background:var(--surface);border-radius:12px}
+.about-stat-num{font-family:'Fraunces',Georgia,serif;font-size:2rem;font-weight:600;color:var(--primary);line-height:1}
+.about-stat-label{font-size:.8rem;color:var(--muted);margin-top:8px}
+.about-visual{background:linear-gradient(135deg,var(--surface),var(--border));border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(139,58,110,.04) 20px,rgba(139,58,110,.04) 22px)}
+.about-visual svg{width:50%;height:50%;color:var(--primary);opacity:.8;position:relative;z-index:1}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+.services{background:var(--surface);max-width:none;padding-left:32px;padding-right:32px}
+.services-inner{max-width:1400px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.service-card{background:var(--bg);border-radius:12px;padding:32px;border:1px solid var(--border);transition:box-shadow .2s,transform .15s}
+.service-card:hover{box-shadow:0 4px 24px rgba(139,58,110,.08);transform:translateY(-2px)}
+.service-card-icon{width:48px;height:48px;background:rgba(139,58,110,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card-icon svg{width:24px;height:24px;color:var(--primary)}
+.service-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.service-card p{font-size:.9rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.why-card{text-align:center;padding:32px}
+.why-card-icon{width:56px;height:56px;background:rgba(139,58,110,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.why-card-icon svg{width:28px;height:28px;color:var(--primary)}
+.why-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.why-card p{font-size:.9rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.why{grid-template-columns:1fr}}
+.contact{background:var(--surface);max-width:none;padding-left:32px;padding-right:32px}
+.contact-inner{max-width:800px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.contact-form{display:grid;gap:16px;background:var(--bg);padding:48px;border-radius:12px;border:1px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{font-size:.85rem;font-weight:600;color:var(--text);display:block;margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:1rem;background:var(--bg);color:var(--text);outline:none;transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--primary)}
+.contact-form textarea{resize:vertical;min-height:120px}
+.contact-form button{background:var(--primary);color:var(--on-primary);border:none;padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;transition:background .2s,transform .15s;justify-self:start}
+.contact-form button:hover{background:#6b2a54;transform:translateY(-1px)}
+.contact-info h3{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:16px}
+.contact-info p{color:var(--muted);margin-bottom:8px;font-size:.95rem}
+.hours-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:16px}
+.hours-list li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+.hours-list li span:first-child{font-weight:500}
+.hours-list li span:last-child{color:var(--muted)}
+.hours-list li.closed span:last-child{color:var(--primary)}
+.location-map{margin-top:24px;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:32px;position:relative;overflow:hidden;height:160px;display:flex;align-items:center;justify-content:center}
+.location-map::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(139,58,110,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(139,58,110,.06) 1px,transparent 1px);background-size:30px 30px}
+.location-map-pin{position:relative;z-index:1;text-align:center}
+.location-map-pin svg{width:40px;height:40px;color:var(--primary)}
+.location-map-pin span{display:block;font-size:.8rem;color:var(--muted);margin-top:8px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.cta{text-align:center;padding:128px 32px;max-width:800px;margin:0 auto}
+.cta h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+.cta h2 em{font-style:italic;font-weight:400;color:var(--primary)}
+.cta p{font-size:1.1rem;color:var(--muted);margin-bottom:32px}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+footer{background:var(--text);color:var(--bg);padding:48px 32px}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.2rem;color:var(--accent)}
+.footer-info{font-size:.85rem;opacity:.6;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="demo-banner">This is a demo website built by <a href="https://thenextfreud.github.io/foothill-digital/">Foothill Digital</a> for Blue Diamond Salon. Want a site like this? <a href="mailto:hello@foothilldigital.co">Email us</a>.</div>
+<nav>
+<a href="#" class="nav-logo">Blue Diamond Salon</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why">Why Us</a></li>
+<li><a href="#contact" class="nav-cta">Book Now</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Hair &amp; Nail Salon · East Pasadena</div>
+<h1>Look your best, <em>feel your best.</em></h1>
+<p class="hero-sub">Full-service hair and nail salon on Foothill Blvd. Cuts, color, styling, manicures, and pedicures. Walk-ins welcome, appointments available.</p>
+<div class="hero-ctas">
+<a href="#contact" class="btn-primary">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+Book Appointment
+</a>
+<a href="#services" class="btn-secondary">Our Services</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-visual-content">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.5 7.5L22 10l-6 4.5L18 22l-6-4-6 4 2-7.5L2 10l7.5-.5z"/></svg>
+<h2>"Great hair isn't an accident.<br>It's the result of someone<br>who cares about the details."</h2>
+</div>
+</div>
+</section>
+<section id="about" class="about">
+<div class="about-text">
+<div class="section-label">Our Story</div>
+<h2 class="section-title">A salon on <em>Foothill Boulevard.</em></h2>
+<p>Blue Diamond Salon is a full-service hair and nail salon in East Pasadena. We've been serving the community on Foothill Blvd, offering everything from a quick trim to a full makeover — hair, nails, color, and styling all under one roof.</p>
+<p>Our experienced stylists work with all hair types and textures. Whether you need a classic cut, a bold new color, or a full set of nails for a special occasion, we'll make sure you leave looking and feeling your best.</p>
+<div class="about-stats">
+<div class="about-stat">
+<div class="about-stat-num">Full</div>
+<div class="about-stat-label">Service Salon</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-num">All</div>
+<div class="about-stat-label">Hair Types</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-num">Walk-ins</div>
+<div class="about-stat-label">Welcome</div>
+</div>
+</div>
+</div>
+<div class="about-visual">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.5 7.5L22 10l-6 4.5L18 22l-6-4-6 4 2-7.5L2 10l7.5-.5z"/></svg>
+</div>
+</section>
+<section id="services" class="services">
+<div class="services-inner">
+<div class="section-label">What We Do</div>
+<h2 class="section-title">Hair, nails, and <em>everything between.</em></h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg></div>
+<h3>Haircuts &amp; Styling</h3>
+<p>Men's, women's, and children's haircuts. Blowouts, updos, and special occasion styling. We work with all hair types and textures.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="3"/></svg></div>
+<h3>Color &amp; Highlights</h3>
+<p>Full color, highlights, balayage, ombre, and color correction. Premium products and experienced colorists for results you'll love.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+<h3>Manicures</h3>
+<p>Classic, gel, and acrylic manicures. Nail art, French tips, and custom designs. Long-lasting, chip-resistant finishes.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+<h3>Pedicures</h3>
+<p>Classic and spa pedicures with massage, exfoliation, and polish. Relax and pamper your feet in our comfortable pedicure area.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+<h3>Special Occasions</h3>
+<p>Weddings, proms, parties, and events. Updos, makeup, and full styling packages. Group bookings available for bridal parties.</p>
+</div>
+<div class="service-card">
+<div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+<h3>Treatments</h3>
+<p>Deep conditioning, keratin treatments, scalp treatments, and hair repair. Restore shine, strength, and health to your hair.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why">
+<div class="section-label">Why Choose Us</div>
+<h2 class="section-title">A salon that <em>treats you right.</em></h2>
+<div class="why">
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+<h3>Experienced Stylists</h3>
+<p>Our stylists have years of experience with all hair types and textures. We listen to what you want and deliver results you'll be happy with.</p>
+</div>
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+<h3>Walk-Ins Welcome</h3>
+<p>No appointment? No problem. Walk in whenever we're open and we'll take care of you. Prefer to book ahead? Call or use the form.</p>
+</div>
+<div class="why-card">
+<div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+<h3>Premium Products</h3>
+<p>We use quality hair and nail products that are gentle, long-lasting, and deliver beautiful results. Your hair and nails deserve the best.</p>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<div class="contact-inner">
+<div class="section-label">Get Started</div>
+<h2 class="section-title">Book your <em>appointment.</em></h2>
+<p style="color:var(--muted);font-size:1.05rem">Fill out the form below or stop by the salon. Walk-ins always welcome.</p>
+<div class="contact-grid">
+<form class="contact-form" onsubmit="handleQuote(event)">
+<div class="form-row">
+<div><label for="name">Name</label><input type="text" id="name" required></div>
+<div><label for="phone">Phone</label><input type="tel" id="phone" required></div>
+</div>
+<div><label for="email">Email</label><input type="email" id="email"></div>
+<div><label for="service">Service</label>
+<select id="service">
+<option>Haircut &amp; Styling</option>
+<option>Color &amp; Highlights</option>
+<option>Manicure</option>
+<option>Pedicure</option>
+<option>Special Occasion</option>
+<option>Treatment</option>
+<option>Other</option>
+</select></div>
+<div><label for="notes">Notes (optional)</label><textarea id="notes" placeholder="Preferred time, stylist preference, what you're looking for..."></textarea></div>
+<button type="submit">Request Appointment</button>
+</form>
+<div class="contact-info">
+<h3>Blue Diamond Salon</h3>
+<p>3550 E Foothill Blvd</p>
+<p>Pasadena, CA 91107</p>
+<div class="section-label" style="margin-top:24px">Hours</div>
+<ul class="hours-list">
+<li><span>Monday</span><span>9:00 AM – 6:00 PM</span></li>
+<li><span>Tuesday</span><span>9:00 AM – 6:00 PM</span></li>
+<li><span>Wednesday</span><span>9:00 AM – 6:00 PM</span></li>
+<li><span>Thursday</span><span>9:00 AM – 6:00 PM</span></li>
+<li><span>Friday</span><span>9:00 AM – 7:00 PM</span></li>
+<li><span>Saturday</span><span>9:00 AM – 7:00 PM</span></li>
+<li class="closed"><span>Sunday</span><span>Closed</span></li>
+</ul>
+<div class="location-map">
+<div class="location-map-pin">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+<span>3550 E Foothill Blvd, Pasadena</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta">
+<h2>Ready for a <em>fresh new look?</em></h2>
+<p>Walk in, call ahead, or book online. Hair, nails, color, and styling — all under one roof on Foothill Blvd.</p>
+<div class="cta-buttons">
+<a href="#contact" class="btn-primary">Book Appointment</a>
+<a href="#services" class="btn-secondary">View Services</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-logo">Blue Diamond Salon</div>
+<div class="footer-info">
+3550 E Foothill Blvd, Pasadena, CA 91107<br>
+Full-service hair &amp; nail salon in East Pasadena
+</div>
+</div>
+</footer>
+<script>
+function handleQuote(e){e.preventDefault();var btn=e.target.querySelector('button');btn.textContent="Thanks! We'll be in touch soon.";btn.style.background='var(--accent)';btn.disabled=true;e.target.querySelectorAll('input,textarea,select').forEach(function(i){i.value='';i.disabled=true})}
+</script>
+</body>
+</html>

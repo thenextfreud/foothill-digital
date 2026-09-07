@@ -92,7 +92,7 @@
     - Pitch angle: NEW SITE
     - Last contacted: never
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/blue-diamond-salon/index.html
 
 17. **East Pasadena Shade Co** — Window treatments, 2723 E Colorado Blvd, 91107
     - Phone: (626) 793-9101 (VERIFIED from listings)
@@ -103,7 +103,7 @@
     - Pitch angle: NEW SITE
     - Last contacted: never
     - Reply status: NONE
-    - Demo built: none
+    - Demo built: demos/east-pasadena-shade/index.html
 
 ## Tier 2 — Has a site but it's dated/basic (BASIC) — pitch redesign or SEO
 
@@ -260,6 +260,8 @@
 | 2026-09-03 | Thermal AC | service@thermalairco.com | Sent OK |
 | 2026-09-03 | DENA CUTZ | denacutz@icloud.com | Sent OK |
 | 2026-09-03 | Michelle's Antiques | m.bc2@verizon.net | Sent OK |
+| 2026-09-06 | Dr Mike Dentistry (follow-up) | mfkdds@sbcglobal.net | Sent OK |
+| 2026-09-06 | Sahara Restaurant (follow-up) | atom66@sbcglobal.net | Sent OK |
 
 ## Note on LA3D, TalGarden, Horizon
 
